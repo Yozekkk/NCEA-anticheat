@@ -29,6 +29,9 @@
 
 - `docs/assets/angelos-adapted/` — 34 адаптированных SVG, 34 статичных PNG для reduced motion и три новых схематических GIF и один GIF повтора реального локального лога запуска в `demos/`.
 - `docs/licenses/` — MIT AngelOS, MIT Cozette и SIL OFL для встроенных шрифтов.
+- `LICENSE`, `LICENSE.ru.md`, `NOTICE`, `TRADEMARKS.md` — новая лицензия NCEA,
+  перевод, уведомление для JAR и правила использования обозначений.
+- `docs/LICENSE_GUIDE.md` — краткое руководство по разрешённым форкам.
 - `docs/ASSET_CREDITS.md` — атрибуция каждого заимствованного SVG.
 - `docs/README_VISUAL_AUDIT.md` — сравнение и результаты просмотра.
 - `scripts/adapt_angelos_readme.py`, `scripts/generate_angelos_readme_demos.py` — воспроизводимая локальная генерация.

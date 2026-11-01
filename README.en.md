@@ -236,7 +236,25 @@ User guides, check definitions, and developer notes live in `docs/`. Searchable 
 
 <details><summary>✉ Inventory 12 · rights, provenance, release</summary>
 
-NCEA code remains [All rights reserved](LICENSE). Adapted AngelOS SVGs retain **MIT © 2026 MixaDoDs**; embedded fonts retain their own MIT/OFL notices. [Asset credits](docs/ASSET_CREDITS.md) · [Visual audit](docs/README_VISUAL_AUDIT.md) · [Third-party audit](docs/THIRD_PARTY_AUDIT.md) · [Release Notes](docs/RELEASE_NOTES_1.0.0.md).
+## License & Forking Policy
+
+NCEA Studio-controlled code and original materials are available under the
+[NCEA Community License 1.0](LICENSE). You may study the code, fork it, fix
+bugs, and distribute functionally improved versions with attribution.
+Publishing a near-unchanged copy under a new name while claiming original
+authorship is prohibited. The new terms begin with the commit introducing
+the license; earlier distributed copies are not automatically relicensed.
+
+```text
+Originally developed by NCEA Studio
+Original project: https://github.com/Yozekkk/NCEA-anticheat
+Official website: https://ncea-studio.com
+```
+
+[Russian translation](LICENSE.ru.md) · [Plain-language guide](docs/LICENSE_GUIDE.md) ·
+[Brand rules](TRADEMARKS.md) · [Third-party audit](docs/THIRD_PARTY_AUDIT.md).
+Adapted AngelOS SVGs retain **MIT © 2026 MixaDoDs**; embedded fonts retain
+their separate MIT/OFL notices.
 
 </details>
 

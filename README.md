@@ -236,7 +236,26 @@ ANSI в автоматическом режиме включается осто�
 
 <details><summary>✉ Опись 12 · права, происхождение и выпуск</summary>
 
-Код NCEA находится под [All rights reserved](LICENSE). Адаптированные SVG AngelOS сохраняют **MIT © 2026 MixaDoDs**; встроенные шрифты имеют отдельные MIT/OFL-уведомления. [Точная атрибуция](docs/ASSET_CREDITS.md) · [Визуальный аудит](docs/README_VISUAL_AUDIT.md) · [Общий аудит](docs/THIRD_PARTY_AUDIT.md) · [Release Notes](docs/RELEASE_NOTES_1.0.0.md).
+## License & Forking Policy
+
+Код и собственные материалы NCEA Studio, на которые студия вправе выдавать
+разрешение, доступны по [NCEA Community License 1.0](LICENSE). Можно изучать
+код, создавать форки, исправлять ошибки и распространять функционально
+улучшенные версии с сохранением авторства. Публикация почти неизменённой копии
+под новым названием с присвоением авторства запрещена. Условия применяются
+с коммита, добавившего новую лицензию; опубликованные ранее копии не меняют
+условия автоматически.
+
+```text
+Originally developed by NCEA Studio
+Original project: https://github.com/Yozekkk/NCEA-anticheat
+Official website: https://ncea-studio.com
+```
+
+[Русский перевод](LICENSE.ru.md) · [Простое руководство](docs/LICENSE_GUIDE.md) ·
+[Правила бренда](TRADEMARKS.md) · [Сторонние лицензии](docs/THIRD_PARTY_AUDIT.md).
+Адаптированные SVG AngelOS сохраняют **MIT © 2026 MixaDoDs**; встроенные
+шрифты сохраняют отдельные MIT/OFL-уведомления.
 
 </details>
 

@@ -1,4 +1,149 @@
-Copyright (c) 2026 NCEA Studio. All rights reserved.
+NCEA COMMUNITY LICENSE 1.0 (NCEA-CL-1.0)
 
-No license to copy, modify, or redistribute this project's original source is granted by this notice.
-Third-party projects and skills are described in docs/THIRD_PARTY_AUDIT.md; none of their source code is included.
+Copyright (c) 2026 NCEA Studio. All rights reserved except as expressly granted below.
+
+This is a custom source-available license. It is not an OSI-approved open-source
+license. NCEA-CL-1.0 is a project shorthand, not an official SPDX identifier.
+
+1. Definitions and scope
+
+"Licensor" means NCEA Studio, only to the extent it owns or may license the
+relevant copyright. "Licensed Material" means NCEA AntiCheat code, configuration,
+documentation, and original materials in this repository for which Licensor
+controls those rights. It excludes separately licensed third-party material and
+material of uncertain provenance. "Fork" means a copy or derivative of Licensed
+Material. "Distribution" means providing copies to others, including through a
+source repository or JAR. Merely running a server is deployment, not Distribution.
+
+"Functional Contribution" means an identifiable change that implements or
+corrects behavior, security, compatibility, reliability, performance, or
+maintainability. Examples include a real bug fix, new check, version adapter, or
+architectural change with an explainable technical effect. A one-line fix can
+qualify. No minimum percentage or line count applies. Changes limited to names,
+logos, colors, package or class names without behavioral effect, README, plugin
+messages, metadata, formatting, or other presentation do not qualify.
+
+"Cosmetic Rebrand" means a Fork without a Functional Contribution that is
+presented or distributed as a new independent product or with misleading
+authorship. "You" means anyone exercising rights under this License.
+
+2. Ownership
+
+Licensor retains its copyright. Fork developers retain copyright in their own
+original additions. This License assigns no ownership to either party.
+
+3. Grant of permission
+
+Subject to these terms, Licensor grants You a worldwide, non-exclusive,
+royalty-free copyright permission to use, run, study, copy, fork, modify, test,
+submit pull requests, publish changes, and distribute Licensed Material and
+permitted Forks. The grant covers only rights Licensor controls. It grants no
+patent or trademark rights.
+
+4. Private work and public forks
+
+You may experiment privately with any modification, including renaming. You may
+maintain public branches and ordinary GitHub forks, including unchanged forks
+that preserve the original identity and notices. You may publish Functional
+Contributions and distribute Forks containing them under Section 8.
+
+5. Cosmetic rebranding
+
+You must not Distribute a Cosmetic Rebrand. Merely replacing a name, logo,
+palette, author, package or class name, README, messages, or metadata does not
+permit presenting a copy as independently developed. Cosmetic themes,
+translations, or configurations may be shared if clearly identified as NCEA
+AntiCheat variants and compliant with Sections 6 and 7. A renamed Fork with a
+Functional Contribution is permitted if it meets all other terms.
+
+6. Attribution and notices
+
+Every Distribution must preserve existing copyright notices and include this
+complete License. The source repository, its README or equivalent primary
+documentation, and documentation accompanying a distributed binary must
+prominently display these exact lines:
+
+Originally developed by NCEA Studio
+Original project: https://github.com/Yozekkk/NCEA-anticheat
+Official website: https://ncea-studio.com
+
+Each distributed binary must contain this License and these origin lines in a
+LICENSE or NOTICE file. A Fork must also identify its developer, describe its
+material Functional Contributions and other significant changes, and disclose
+that it is unofficial unless separately authorized by Licensor. Additional
+accurate copyright notices for new contributions are allowed.
+
+7. Distribution of the original
+
+You may redistribute an unchanged copy as NCEA AntiCheat, preserving its
+identity, this License, all applicable third-party notices, and Section 6
+attribution. You may identify Yourself as a distributor, but not as the
+original developer.
+
+8. Distribution of modified material
+
+You may distribute a distinct Fork containing a Functional Contribution if
+Sections 5, 6, 9, 10, and 11 are satisfied. Identify modified files or supply
+an accessible change summary. Licensed Material and modifications to it must
+remain available to recipients under this License; do not impose terms that
+prevent exercise of these rights. Separable original additions may have other
+terms if they do not negate this License for Licensed Material or violate a
+third-party license. Source and binary distribution are allowed. This License
+does not require publication of a Fork's complete source code.
+
+9. Server deployment
+
+Running the original or a Fork on a Minecraft server is permitted. The installed
+plugin must retain an administrator-accessible origin notice, such as plugin
+metadata, an about/version command, or an equivalent administrator interface.
+It must identify NCEA Studio as original developer. A Fork must also identify
+its own developer and give an accessible summary of material changes. Player
+advertising is not required. Distribution of the JAR also triggers Sections 6-8.
+
+10. Branding and marks
+
+No rights in the names NCEA Studio or NCEA AntiCheat, their logos, or other
+source-identifying marks are granted beyond truthful origin identification and
+distribution of an unchanged copy under Section 7. Do not imply an unofficial
+Fork is made, endorsed, or supported by NCEA Studio. Do not attribute a Fork's
+changes to NCEA Studio or claim authorship of the original. "Based on NCEA
+AntiCheat" is permitted when truthful and accompanied by Section 6 attribution.
+This License does not claim any mark is registered. See TRADEMARKS.md.
+
+11. Third-party material
+
+This License does not relicense adapted AngelOS graphics, embedded fonts,
+installed skills, dependencies, build tools, or other third-party works.
+Their own terms govern. Preserve their notices. See docs/THIRD_PARTY_AUDIT.md
+and docs/ASSET_CREDITS.md. A separate file-specific license takes precedence
+for that file.
+
+12. Termination and cure
+
+Rights granted here terminate if You breach these conditions and fail to cure
+within 30 days after receiving written notice describing the breach. Timely
+cure reinstates the grant; otherwise written consent from Licensor is required.
+Compliant recipients' existing rights and separate third-party licenses remain
+unaffected.
+
+13. Disclaimer of warranty
+
+TO THE EXTENT PERMITTED BY LAW, LICENSED MATERIAL IS PROVIDED "AS IS",
+WITHOUT WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+14. Limitation of liability
+
+TO THE EXTENT PERMITTED BY LAW, LICENSOR AND CONTRIBUTORS ARE NOT LIABLE FOR
+CLAIMS, DAMAGES, OR OTHER LIABILITY ARISING FROM USE OR DISTRIBUTION OF
+LICENSED MATERIAL, WHETHER IN CONTRACT, TORT, OR OTHERWISE.
+
+15. General provisions
+
+If a provision is unenforceable, the others continue to the extent permitted
+by law. Delay in enforcement is not a waiver. No jurisdiction or venue is
+selected. The English text controls over its Russian translation to the extent
+permitted by applicable law. This License first applies to NCEA-controlled
+material in the repository commit introducing this file and later distributions
+that include it. It does not retroactively relicense copies already distributed,
+including the published v1.0.0 tag and its existing release JARs.

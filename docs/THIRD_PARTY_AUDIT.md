@@ -23,9 +23,30 @@ Paper API подключён как compile-only для JAR. JUnit 5 и JaCoCo �
 
 ## AngelOS README artwork — current documentation adaptation
 
-The current README uses **34 adapted SVG source files** from [MixaDoDs/AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) pinned at `e5f771cfee9dedf81b6e4a648dd53c763d904e09`. Its own artwork is MIT © 2026 MixaDoDs; the [full MIT notice](licenses/ANGELOS-MIT.txt) is included. Embedded Cozette, Pixeloid Sans and Caveat subsets retain their separate [MIT](licenses/COZETTE-MIT.txt) and [SIL OFL 1.1](licenses/ANGELOS-FONTS-OFL-1.1.txt) notices. The asset-by-asset mapping is in [ASSET_CREDITS.md](ASSET_CREDITS.md). The NCEA source-code `LICENSE` remains unchanged and does not relicense these graphics.
+The current README uses **34 adapted SVG source files** from [MixaDoDs/AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) pinned at `e5f771cfee9dedf81b6e4a648dd53c763d904e09`. Its own artwork is MIT © 2026 MixaDoDs; the [full MIT notice](licenses/ANGELOS-MIT.txt) is included. Embedded Cozette, Pixeloid Sans and Caveat subsets retain their separate [MIT](licenses/COZETTE-MIT.txt) and [SIL OFL 1.1](licenses/ANGELOS-FONTS-OFL-1.1.txt) notices. The asset-by-asset mapping is in [ASSET_CREDITS.md](ASSET_CREDITS.md). The new NCEA source-code `LICENSE` does not relicense these graphics.
 
 No AngelOS demo GIFs, desktop screenshots, wallpapers, icons, SDDM theme, plugin code or other third-party media were copied. Three new NCEA technical GIFs are labelled as schematics; a fourth replays an actual local Paper startup log excerpt. The older section below records the previous README artwork state before this adaptation; it is retained as history.
+
+## NCEA Community License 1.0 scope
+
+The [new custom license](../LICENSE) applies only to NCEA-controlled material
+from the commit introducing it. It is not retroactive for the published
+`v1.0.0` tag or existing release JARs. These materials keep separate terms
+or require provenance confirmation:
+
+| Material | Source and status | Treatment |
+|---|---|---|
+| Adapted AngelOS SVGs and derived PNGs | Pinned AngelOS revision above, © 2026 MixaDoDs | MIT; retain [notice](licenses/ANGELOS-MIT.txt) |
+| Embedded Cozette subset | AngelOS upstream font, © 2020 Ines | MIT; retain [notice](licenses/COZETTE-MIT.txt) |
+| Embedded Pixeloid Sans and Caveat subsets | AngelOS upstream fonts, credited in [ASSET_CREDITS.md](ASSET_CREDITS.md) | SIL OFL 1.1; retain [notice](licenses/ANGELOS-FONTS-OFL-1.1.txt) |
+| Local `.agents/skills/` copies | github/awesome-copilot pinned above | MIT; retain `.agents/skills/_upstream/awesome-copilot-LICENSE` |
+| `Ascii/` original image and Bash reference | Owner-supplied files; ownership not independently verified | Kept as provided; excluded from NCEA-CL where rights are uncertain |
+| Java source, NCEA-owned configuration and documentation | No copied third-party anticheat source found | NCEA-CL-1.0 to the extent NCEA Studio controls copyright |
+| Paper API, JUnit, JaCoCo, Gradle | Build, compile-only, or test dependencies | Their own licenses; Paper/JUnit/JaCoCo are not bundled into plugin JARs |
+
+The NCEA pixel geometry derived from `Ascii/` is used in console and README
+artwork. The owner's copyright provenance for this reference should be
+confirmed before promising downstream relicensing rights to it.
 
 
 [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) изучен как пример визуального ритма, анимаций и раскрывающихся секций. Его SVG, GIF, изображения, разметка и текст в NCEA не копировались. Новые файлы `docs/assets/readme/` сгенерированы для NCEA из предоставленного `Ascii/Ascii final result.png` и оригинального кода генератора. Python Pillow и локальный `rsvg-convert` используются только при генерации графики; в Gradle-сборку и Paper-плагин не входят.

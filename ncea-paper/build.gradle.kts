@@ -23,6 +23,8 @@ val jar120 = tasks.register<Jar>("jar120") {
     destinationDirectory.set(rootProject.layout.projectDirectory.dir("dist"))
     from(sourceSets["paper120"].output)
     from(zipTree(coreJar.get().archiveFile))
+    from(rootProject.file("LICENSE"))
+    from(rootProject.file("NOTICE"))
 }
 val jar1201 = tasks.register<Jar>("jar1201") {
     dependsOn("paper1201Classes", coreJar)
@@ -30,6 +32,8 @@ val jar1201 = tasks.register<Jar>("jar1201") {
     destinationDirectory.set(rootProject.layout.projectDirectory.dir("dist"))
     from(sourceSets["paper1201"].output)
     from(zipTree(coreJar.get().archiveFile))
+    from(rootProject.file("LICENSE"))
+    from(rootProject.file("NOTICE"))
 }
 tasks.named<Jar>("jar") { enabled = false }
 tasks.assemble { dependsOn(jar120, jar1201) }
