@@ -21,4 +21,4 @@ Paper API подключён как compile-only для JAR. JUnit 5 и JaCoCo �
 
 ## GitHub README artwork
 
-[AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) изучен как пример визуального ритма, анимаций и раскрывающихся секций. Его SVG, GIF, изображения, разметка и текст в NCEA не копировались. Новые файлы `docs/assets/readme/` сгенерированы для NCEA из предоставленного `Ascii/Ascii final result.png` и оригинального кода генератора. Python Pillow используется только при локальной генерации графики; в Gradle-сборку и Paper-плагин не входит.
+[AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) изучен как пример визуального ритма, анимаций и раскрывающихся секций. Его SVG, GIF, изображения, разметка и текст в NCEA не копировались. Новые файлы `docs/assets/readme/` сгенерированы для NCEA из предоставленного `Ascii/Ascii final result.png` и оригинального кода генератора. Python Pillow и локальный `rsvg-convert` используются только при генерации графики; в Gradle-сборку и Paper-плагин не входят.

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Generate original NCEA README artwork from the local NCEA AC reference image."""
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 import html
+import io
+import shutil
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/assets/readme'
@@ -98,7 +101,7 @@ for i,(name,sub) in enumerate([('SPEED','horizontal displacement'),('FLY','verti
 checks+=label(600,273,'Heuristics with exemptions and violation accumulation • no automatic bans',13,CYAN,400,'text-anchor="middle"')
 (OUT/'checks.svg').write_text(frame(1200,290,checks),encoding='utf-8')
 
-rows=(ROOT/'ncea-paper/build/previews/banner.txt').read_text(encoding='utf-8').splitlines()
+rows=(ROOT/'ncea-core/src/test/resources/branding/original-seven-rows.snapshot.txt').read_text(encoding='utf-8').splitlines()
 terminal=grid(1200,395)
 terminal+='<rect x="30" y="27" width="1140" height="340" rx="11" fill="#090D1D" stroke="'+BLUE+'"/>'
 terminal+='<path d="M30 69H1170" stroke="'+BLUE+'" opacity=".5"/>'
@@ -135,4 +138,23 @@ for n in range(12):
     draw.text((94,250),'NCEA AC  /  CONSOLE BRANDING PREVIEW',fill=(180,207,255,255))
     frames.append(canvas.quantize(colors=64))
 frames[0].save(OUT/'logo-preview.gif',save_all=True,append_images=frames[1:],duration=120,loop=0,optimize=True,disposal=2)
+
+# GitHub's SVG viewer may keep CSS motion static. A small GIF gives the README
+# reliable motion, while hero.svg remains the reduced-motion/static fallback.
+if shutil.which('rsvg-convert'):
+    base_svg = subprocess.check_output(['rsvg-convert', str(OUT/'hero.svg')])
+    base = Image.open(io.BytesIO(base_svg)).convert('RGB').resize((760,272),Image.Resampling.LANCZOS)
+    palette = base.quantize(colors=64,dither=Image.Dither.NONE)
+    motion=[]
+    for n in range(10):
+        frame=base.copy()
+        draw=ImageDraw.Draw(frame,'RGBA')
+        for col,x in enumerate(range(55,720,98)):
+            y=(n*16+col*35)%210+22
+            draw.text((x,y),'0 1 0',fill=(53,213,255,42))
+        y=38+n*15
+        draw.line((30,y,728,y),fill=(53,213,255,65),width=2)
+        motion.append(frame.quantize(palette=palette,dither=Image.Dither.NONE))
+    motion[0].save(OUT/'hero-motion.gif',save_all=True,append_images=motion[1:],duration=150,
+                   loop=0,optimize=True,disposal=1)
 print('generated',*[f'{p.name}:{p.stat().st_size}' for p in sorted(OUT.iterdir())])

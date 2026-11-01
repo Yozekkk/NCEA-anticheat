@@ -10,7 +10,7 @@
 | `ncea-core/src/test`, `ncea-paper/src/test` | JUnit 5 и снимок логотипа |
 | `Ascii/` | Предоставленный Bash-референс и описание; не исполняется плагином |
 | `docs/` | Пользовательская и техническая документация |
-| `docs/assets/readme/` | Оригинальные SVG, анимированный GIF и визуальные схемы для GitHub README |
+| `docs/assets/readme/` | Оригинальные SVG, GIF-шапка с fallback для reduced motion, GIF логотипа и визуальные схемы для GitHub README |
 | `scripts/generate_readme_assets.py` | Воспроизводимая генерация графики из локального NCEA AC PNG; нужен Pillow только для этого скрипта |
 | `.github/workflows/ci.yml` | Java 17 CI: JUnit, обе Paper-сборки, проверка JAR и artifact upload |
 | `scripts/integration_smoke.py` | Локальный Paper smoke QA, требует официальные JAR |

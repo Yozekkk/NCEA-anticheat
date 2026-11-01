@@ -2,7 +2,7 @@
 
 [Русский](README.md) · **English**
 
-<img src="docs/assets/readme/hero.svg" alt="NCEA AntiCheat with the original NCEA AC pixel mark" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/hero.svg" /><img src="docs/assets/readme/hero-motion.gif" alt="NCEA AntiCheat with the original NCEA AC pixel mark" width="100%" /></picture>
 
 **Minecraft Server AntiCheat by [NCEA Studio](https://ncea-studio.com)**
 
