@@ -24,3 +24,11 @@
 | `docs/RELEASE_NOTES_1.0.0.md` | Примечания к Stable-релизу, загрузки и ограничения |
 
 Для полной актуальной карты запустите `scripts/list-project-paths.sh`. [Архитектура](ARCHITECTURE.md) · [Разработка](DEVELOPMENT.md).
+
+## Материалы AngelOS-адаптации
+
+- `docs/assets/angelos-adapted/` — 34 адаптированных SVG и три новых схематических GIF в `demos/`.
+- `docs/licenses/` — MIT AngelOS, MIT Cozette и SIL OFL для встроенных шрифтов.
+- `docs/ASSET_CREDITS.md` — атрибуция каждого заимствованного SVG.
+- `docs/README_VISUAL_AUDIT.md` — сравнение и результаты просмотра.
+- `scripts/adapt_angelos_readme.py`, `scripts/generate_angelos_readme_demos.py` — воспроизводимая локальная генерация.

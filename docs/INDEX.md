@@ -14,3 +14,7 @@
 | [Команды](COMMANDS.md) · [Права](PERMISSIONS.md) | [История изменений](CHANGELOG.md) · [Скиллы](SKILLS.md) |
 | [Примечания к выпуску 1.0.0](RELEASE_NOTES_1.0.0.md) | [Графические ресурсы README](../docs/assets/readme/) |
 | [Решение проблем](TROUBLESHOOTING.md) · [Совместимость](COMPATIBILITY.md) | [Брендинг](BRANDING.md) |
+
+## Визуальные материалы README
+
+[Атрибуция AngelOS](ASSET_CREDITS.md) · [Визуальный аудит](README_VISUAL_AUDIT.md) · [Лицензии графики](licenses/)

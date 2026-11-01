@@ -1,122 +1,145 @@
 <div align="center">
 
-[Русский](README.md) · **English**
+[РУССКИЙ](README.md) · [**ENGLISH**](README.en.md)
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/hero.svg" /><img src="docs/assets/readme/hero-motion.gif" alt="NCEA AntiCheat with the original NCEA AC pixel mark" width="100%" /></picture>
+<img src="docs/assets/angelos-adapted/header.svg" width="100%" alt="NCEA AntiCheat 1.0.0 Stable VHS header adapted from AngelOS" />
 
-**Minecraft Server AntiCheat by [NCEA Studio](https://ncea-studio.com)**
+**NCEA AntiCheat 1.0.0 Stable** · Paper 1.20 / 1.20.1 · Java 17
 
-<img src="docs/assets/readme/stable-badge.svg" alt="1.0.0 Stable" height="38" /> <img src="docs/assets/readme/paper-badge.svg" alt="Paper 1.20 / 1.20.1" height="38" /> <img src="docs/assets/readme/java-badge.svg" alt="Java 17" height="38" /> <img src="docs/assets/readme/gradle-badge.svg" alt="Gradle" height="38" /> <img src="docs/assets/readme/checks-badge.svg" alt="5 checks" height="38" /> [<img src="docs/assets/readme/ci-badge.svg" alt="CI" height="38" />](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
-
-[Install](#installation) · [Checks](#detection-engine) · [Console](#ncea-ac-console) · [Docs](docs/INDEX.md) · [Русский](README.md)
+[NCEA Studio](https://ncea-studio.com) · [Download release](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0) · [Documentation](docs/INDEX.md)
 
 </div>
 
-<img src="docs/assets/readme/matrix-divider.svg" alt="Decorative digital divider" width="100%" />
+<img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" />
+<img src="docs/assets/angelos-adapted/stamp-evidence.svg" width="240" align="right" alt="Stamp: observe, no auto ban" />
 
-## System
+> **NCEA case file / 12 tapes.** This visual narrative describes the product that actually shipped. Images marked *schematic* are conceptual illustrations, not gameplay test footage. The adapted VHS artwork is based on the MIT-licensed [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Asset credits](docs/ASSET_CREDITS.md).
 
-NCEA AntiCheat is NCEA Studio's modular Paper plugin. **1.0.0 Stable** collects suspicious movement, combat and placement evidence, maintains an independent violation level (VL) for each check, and alerts staff. The default **OBSERVE** mode neither cancels player actions nor issues automatic bans.
+<br clear="all" />
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/status.svg" /><img src="docs/assets/readme/stable-status.gif" alt="1.0.0 Stable: observe mode" width="100%" /></picture>
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
 
-> [!IMPORTANT]
-> This stable-channel release contains heuristic checks. No connected-client gameplay validation, detection rate, or real false-positive rate has been measured. A successful server startup is not a PvP test.
+<img src="docs/assets/angelos-adapted/tape-01.svg" width="100%" alt="Tape 01: Introduction" />
 
-## Detection engine
+### 01 · The NCEA case
 
-<img src="docs/assets/readme/checks.svg" alt="Five implemented checks" width="100%" />
+The server observes events. NCEA AntiCheat turns them into evidence, maintains a separate **Violation Level** for each check, and alerts staff. **1.0.0 Stable** is the owner's decision to release the current feature set. The default **OBSERVE** mode does not cancel player actions or issue automatic bans.
 
-| Check | Signal | State |
-|---|---|---|
-| **Speed** | Horizontal distance in short `PlayerMoveEvent` windows | Working heuristic |
-| **Fly** | Sustained near-zero vertical movement off ground | Working heuristic |
-| **Reach** | Eye-to-server-hitbox distance on a damaging attack | Working, no packet history compensation |
-| **AutoClicker** | Unique successful attacks within one second | Working; does not count all clicks |
-| **FastPlace** | Intervals between successful block placements | Working heuristic |
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/stable-release.png" /><img src="docs/assets/angelos-adapted/demos/stable-release.gif" width="100%" alt="Schematic 1.0.0 Stable release animation" /></picture>
 
-Context exemptions, ping, TPS, and server movement grace windows reduce obvious false signals. One signal does not establish cheating. [Mechanisms and limitations](docs/CHECKS.en.md).
+<details><summary>✉ Inventory 01 · what works now</summary>
 
-
-### Five signals · five visual models
-
-These are algorithm illustrations, not recorded gameplay or detection measurements.
-
-**Speed**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" alt="Illustration of Speed" width="100%" /></picture>
-
-**Fly**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" alt="Illustration of Fly" width="100%" /></picture>
-
-**Reach**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" alt="Illustration of Reach" width="100%" /></picture>
-
-**AutoClicker**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" alt="Illustration of AutoClicker" width="100%" /></picture>
-
-**FastPlace**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" alt="Illustration of FastPlace" width="100%" /></picture>
-
-<img src="docs/assets/readme/digital-snow.svg" alt="Digital snow" width="100%" />
-
-## Architecture
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" alt="NCEA AntiCheat module architecture" width="100%" /></picture>
-
-`ncea-core` contains observations, checks, VL/decay, player data, and branding without Paper imports. `ncea-paper` handles Paper events, exemptions, YAML, commands, and lifecycle. Shared sources compile separately against Paper API **1.20** and **1.20.1**. [Architecture notes](docs/ARCHITECTURE.md).
-
-## NCEA AC console
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" alt="Rendered console branding preview" width="100%" /></picture>
-
-<details><summary>Show the real monochrome logo output</summary>
-
-```text
-▀█▄████▄      ▄█▀██▄▄     ▄█▀██▄▄    ▄▀▀▀▀▄▄           ▄▀▀▀▀▄▄       ▄█▀██▄▄ 
- ███  ▀██   ▄██   ████  ▄██   ████     ▄▄▄███            ▄▄▄███    ▄██   ████
- ███   ███ ████    ▀▀  ████  ▄██▀   ▄██  ▀███         ▄██  ▀███   ████    ▀▀ 
- ███   ███ ███▀        ███▀▄█▀▀    ██▄█   ▀█▄        ██▄█   ▀█▄   ███▀       
- ▄▀    ▄▀▄ ▀▄▀▀        ▀▄▀▀▌       ▀▄▀▄   ▀▄▀        ▀▄▀▄   ▀▄▀   ▀▄▀▀       
-   ▀    ▀▀     ▄   ▄▄▀     ▄   ▄▄▀  ▀██  ▄███ ▄       ▀██  ▄███ ▄     ▄   ▄▄▀
- ▀▀▀   ▀     ▀▀▀▀▀▀      ▀▀▀▀▀▀        ▀▀ ▀▀ ▀           ▀▀ ▀▀ ▀    ▀▀▀▀▀▀   
-```
-
-The geometry comes from the [provided Bash source](Ascii/NCEA_AC_original_banner.sh), alongside the [original image](Ascii/Ascii%20final%20result.png). Java never executes Bash to render it.
+Five checks: **Speed**, **Fly**, **Reach**, **AutoClicker**, and **FastPlace**. Contextual exemptions, VL accumulation and decay, alerts, commands, and configuration are included. Packet checks and predictive physics are not. [Known limitations](docs/KNOWN_LIMITATIONS.md).
 
 </details>
 
-<img src="docs/assets/readme/logo-preview.gif" alt="Animated pixel logo branding preview, no gameplay footage" width="68%" />
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
 
-*This GIF previews branding, not gameplay.* Terminal colors use conservative auto detection; ANSI 16/256/TrueColor, themes, Unicode/ASCII, and safe custom templates are available. [Branding guide](docs/CONSOLE_BRANDING.md) · [Custom banner](docs/BANNER_CUSTOMIZATION.md).
+<img src="docs/assets/angelos-adapted/tape-02.svg" width="100%" alt="Tape 02: Installation" />
 
-<img src="docs/assets/readme/cyber-divider.svg" alt="Neon divider" width="100%" />
+### 02 · Connect the server
 
-## Configuration
+Choose **one** JAR matching your Paper version and place it in `plugins/` on a Java 17 server. Start Paper, then inspect the status and generated settings.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" alt="Illustrative YAML configuration" width="100%" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/commands.png" /><img src="docs/assets/angelos-adapted/demos/commands.gif" width="100%" alt="Schematic administrative command animation, not a server recording" /></picture>
 
-First start creates `config.yml`, `checks.yml`, `branding.yml`, and `custom-banner.txt` under `plugins/NCEAAntiCheat/`.
+<details><summary>✉ Inventory 02 · downloads and first commands</summary>
 
-```yaml
-# branding.yml
-branding:
-  banner:
-    style: original-3d
-    charset: unicode
-  console:
-    colors: auto
-    color-mode: ansi16
-  theme:
-    name: ncea-original
+| Server | File |
+|---|---|
+| Paper 1.20 | [NCEA-AntiCheat-1.20.jar](https://github.com/Yozekkk/NCEA-anticheat/releases/download/v1.0.0/NCEA-AntiCheat-1.20.jar) |
+| Paper 1.20.1 | [NCEA-AntiCheat-1.20.1.jar](https://github.com/Yozekkk/NCEA-anticheat/releases/download/v1.0.0/NCEA-AntiCheat-1.20.1.jar) |
+
+```text
+/nceaac status
+/nceaac checks
+/nceaac config validate
 ```
 
+[Installation guide](docs/INSTALLATION.en.md) · [Compatibility](docs/COMPATIBILITY.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+
+<img src="docs/assets/angelos-adapted/tape-03.svg" width="100%" alt="Tape 03: Detection Engine" />
+
+### 03 · The evidence reel
+
+Each check contributes its own signal. The engine applies weight, threshold, cooldown, and VL decay over time. One unusual event is not proof of cheating.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/violations.png" /><img src="docs/assets/angelos-adapted/demos/violations.gif" width="100%" alt="Schematic VL animation, not real player data" /></picture>
+
+<details><summary>✉ Inventory 03 · technical model</summary>
+
+Checks process normalized Paper events. VL is independent per player and check. Exemptions and low TPS can suppress signals. `/nceaac violations <player>` shows the latest evidence. [Architecture](docs/ARCHITECTURE.md) · [Settings](docs/CONFIGURATION.en.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+
+<img src="docs/assets/angelos-adapted/tape-04.svg" width="100%" alt="Tape 04: Movement Checks" />
+
+### 04 · Coordinates in motion
+
+**Speed** analyzes horizontal displacement in short `PlayerMoveEvent` windows. **Fly** looks for sustained near-zero vertical movement away from the ground. Teleports, effects, knockback, and server lag change the legitimate movement envelope.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" width="100%" alt="Schematic Speed illustration, not gameplay footage" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" width="100%" alt="Schematic Fly illustration, not gameplay footage" /></picture>
+
+<details><summary>✉ Inventory 04 · false positives</summary>
+
+These are heuristics; they do not simulate every Minecraft physics rule. Review evidence, ping, TPS, and movement context before considering sanctions. [Check details](docs/CHECKS.en.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+
+<img src="docs/assets/angelos-adapted/tape-05.svg" width="100%" alt="Tape 05: Combat Checks" />
+
+### 05 · The moment of attack
+
+**Reach** measures distance from the attacker's eyes to the server-side target hitbox. **AutoClicker** counts distinct successful attacks per second. Packet history is not reconstructed, and the plugin cannot observe every physical mouse click.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" width="100%" alt="Schematic Reach measurement, not real data" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" width="100%" alt="Schematic attack impulses, not actual clicks" /></picture>
+
+<details><summary>✉ Inventory 05 · measurement limits</summary>
+
+Ping and delay are treated conservatively. One fast attack does not trigger a punishment. [Thresholds and methods](docs/CHECKS.en.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+
+<img src="docs/assets/angelos-adapted/tape-06.svg" width="100%" alt="Tape 06: World Checks" />
+
+### 06 · Block after block
+
+**FastPlace** observes intervals between successful block placements. It is the only implemented world check in 1.0.0; Scaffold, Nuker, and similar names are not presented as working features.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" width="100%" alt="Schematic FastPlace intervals" /></picture>
+
+<details><summary>✉ Inventory 06 · context</summary>
+
+Server lag, legitimate fast building, and temporary exemptions affect the signal. OBSERVE mode lets staff review alerts without automatic sanctions. [Check reference](docs/CHECKS.en.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+
+<img src="docs/assets/angelos-adapted/tape-07.svg" width="100%" alt="Tape 07: Configuration" />
+
+### 07 · Tune the signal
+
+`config.yml`, `checks.yml`, and `branding.yml` are created under `plugins/NCEAAntiCheat/`. Invalid settings do not replace the active configuration on reload.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" width="100%" alt="Illustrative YAML configuration, not a GUI recording" /></picture>
+
+<details><summary>✉ Inventory 07 · a short excerpt</summary>
+
 ```yaml
-# checks.yml excerpt
+# checks.yml
 checks:
   speed:
     enabled: true
@@ -125,68 +148,99 @@ checks:
     alert-threshold: 5.0
 ```
 
-`/nceaac reload` validates settings before applying them. OBSERVE mode does not punish players. [Check configuration](docs/CONFIGURATION.en.md) · [Branding reference](docs/CONFIG_REFERENCE.md) · [Presets](presets/).
-
-## Installation
-
-1. Download the JAR matching your Paper version from the [v1.0.0 stable release](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0).
-2. Put it in `plugins/` on **Paper 1.20 or 1.20.1** running **Java 17**.
-3. Start the server and check for `Status ENABLED` beneath the logo.
-4. Run `/nceaac status`, `/nceaac checks`, and `/nceaac config validate`.
-5. Edit the YAML files and run `/nceaac reload`.
-
-<details><summary>Build and preview locally</summary>
-
-```bash
-./gradlew clean build
-./gradlew :ncea-paper:previewBanner
+```text
+/nceaac reload
+/nceaac config validate
 ```
 
-A full JDK is needed to build. Sources compile with `--release 17`; both JARs appear in `dist/`. [Installation details](docs/INSTALLATION.en.md) · [Compatibility](docs/COMPATIBILITY.md).
+[Configuration](docs/CONFIGURATION.en.md) · [Branding reference](docs/CONFIG_REFERENCE.md).
 
 </details>
 
-## Commands
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
 
-| Command | Purpose |
-|---|---|
-| `/nceaac status` · `/nceaac version` | Version and status |
-| `/nceaac checks` | Five check states |
-| `/nceaac alerts` | Toggle staff alerts |
-| `/nceaac violations <player>` | Online player's VL and latest evidence |
-| `/nceaac reset <player>` | Clear VL and temporary counters |
-| `/nceaac exempt <player>` · `/nceaac unexempt <player>` | Temporary exemption |
-| `/nceaac reload` · `/nceaac config validate` | YAML reload and validation |
-| `/nceaac performance` | Local counters and check timing |
+<img src="docs/assets/angelos-adapted/tape-08.svg" width="100%" alt="Tape 08: Console Branding" />
 
-`/nceaac help` lists commands; `profile` and `debug` currently share the `violations` output. [All commands](docs/COMMANDS.md) · [Permissions](docs/PERMISSIONS.md).
+### 08 · NCEA AC on startup
 
-## Testing
+The real pixel geometry of the console mark comes from the [owner's supplied image](Ascii/Ascii%20final%20result.png). The banner appears only after successful initialization. Color Unicode, monochrome, ASCII, compact, and custom modes are configured through `branding.yml`.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" alt="Testing panel; actual results in the table" width="100%" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" width="100%" alt="Illustrative console startup sequence" /></picture>
 
-| Test | Actual result |
-|---|---|
-| JUnit 5 | **77 tests**, 0 failures (60 core, 17 Paper) |
-| JaCoCo | Core **81.4%** line coverage; Paper **49.2%** |
-| Paper 1.20 / 1.20.1 | Local cold and repeat startup on Java 17 |
-| Banner variants | 16 server starts, eight variants on each version |
-| Connected client | Not tested |
+<details><summary>✉ Inventory 08 · safe output</summary>
 
-[Method](docs/TESTING.md) · [Results](docs/TEST_RESULTS.md) · [QA](docs/QA_REPORT.md) · [Performance](docs/PERFORMANCE.md).
+Automatic ANSI detection is conservative; an unsuitable terminal must not block plugin startup. [Console branding](docs/CONSOLE_BRANDING.md) · [Custom banner](docs/BANNER_CUSTOMIZATION.md).
 
-## Roadmap
+</details>
 
-| Available now | Planned |
-|---|---|
-| Five observe-mode checks, VL/decay, exemptions, alerts, commands, branding | Packet inspection, physical simulation, more precise latency compensation, client-based PvP tests, false-positive and TPS measurements |
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
 
-Automatic punishment and setbacks need separate implementation and gameplay validation. [Known limitations](docs/KNOWN_LIMITATIONS.md).
+<img src="docs/assets/angelos-adapted/tape-09.svg" width="100%" alt="Tape 09: Architecture" />
 
-## Documentation and provenance
+### 09 · How an event travels
 
-[Docs index](docs/INDEX.md) · [Quick start](docs/GETTING_STARTED.en.md) · [Developer guide](docs/DEVELOPMENT.md) · [File map](docs/FILE_MANIFEST.md) · [Changelog](docs/CHANGELOG.md) · [Release Notes 1.0.0](docs/RELEASE_NOTES_1.0.0.md)
+`ncea-paper` receives events and builds context. `ncea-core` holds player state, checks, VL, and the banner renderer. Shared code compiles separately against Paper API 1.20 and 1.20.1.
 
-The original product source was written for NCEA Studio. [LICENSE](LICENSE) currently states **All rights reserved** and grants no right to copy or modify the source. No code from the researched GPL/AGPL anticheats is bundled. Third-party sources and tool licenses are recorded in the [audit](docs/THIRD_PARTY_AUDIT.md).
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" width="100%" alt="Architecture schematic, not server footage" /></picture>
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/footer.svg" /><img src="docs/assets/readme/neon-footer.gif" alt="NCEA Studio — ncea-studio.com" width="100%" /></picture>
+<details><summary>✉ Inventory 09 · modules</summary>
+
+Core has no Bukkit imports. Paper API stays on the appropriate server thread. Player state is cleared on disconnect. [Architecture](docs/ARCHITECTURE.md) · [Development](docs/DEVELOPMENT.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+
+<img src="docs/assets/angelos-adapted/tape-10.svg" width="100%" alt="Tape 10: Testing" />
+
+### 10 · A report, not a promise
+
+**77 JUnit tests passed with zero failures.** Separate local Paper 1.20 and 1.20.1 servers on Java 17 passed cold and repeat starts. JaCoCo line coverage is **81.4%** for core and **49.2%** for the Paper adapter.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" width="100%" alt="Schematic QA panel; actual results are stated in text" /></picture>
+
+<details><summary>✉ Inventory 10 · test boundaries</summary>
+
+No Minecraft client was connected. Real detection and false-positive rates, PvP load, and hosting web consoles were not measured. [Results](docs/TEST_RESULTS.md) · [Method](docs/TESTING.md) · [QA](docs/QA_REPORT.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+
+<img src="docs/assets/angelos-adapted/tape-11.svg" width="100%" alt="Tape 11: Documentation" />
+
+### 11 · Navigate the archive
+
+User guides, check definitions, and developer notes live in `docs/`. Searchable Markdown remains the primary source; artwork supports the narrative.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/documentation-panel.svg" /><img src="docs/assets/readme/documentation-panel.gif" width="100%" alt="Documentation illustration" /></picture>
+
+<details><summary>✉ Inventory 11 · open the files</summary>
+
+[Index](docs/INDEX.md) · [Quick start](docs/GETTING_STARTED.en.md) · [Commands](docs/COMMANDS.md) · [Permissions](docs/PERMISSIONS.md) · [Checks](docs/CHECKS.en.md) · [Troubleshooting](docs/TROUBLESHOOTING.md) · [Changelog](docs/CHANGELOG.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+
+<img src="docs/assets/angelos-adapted/tape-12.svg" width="100%" alt="Tape 12: NCEA Studio and Release" />
+
+### 12 · End of tape, start of work
+
+**NCEA Studio** releases the current product as **1.0.0 Stable** for Paper 1.20/1.20.1. Future work includes packet inspection, more precise physics, and gameplay validation. None is claimed as implemented today.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/stable-release.png" /><img src="docs/assets/angelos-adapted/demos/stable-release.gif" width="100%" alt="Stable release visual" /></picture>
+
+<details><summary>✉ Inventory 12 · rights, provenance, release</summary>
+
+NCEA code remains [All rights reserved](LICENSE). Adapted AngelOS SVGs retain **MIT © 2026 MixaDoDs**; embedded fonts retain their own MIT/OFL notices. [Asset credits](docs/ASSET_CREDITS.md) · [Visual audit](docs/README_VISUAL_AUDIT.md) · [Third-party audit](docs/THIRD_PARTY_AUDIT.md) · [Release Notes](docs/RELEASE_NOTES_1.0.0.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/end.svg" width="100%" alt="NCEA Studio VHS end screen" />
+
+<div align="center">
+
+[NCEA Studio](https://ncea-studio.com) · [GitHub Release](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0) · [Русский](README.md)
+
+</div>

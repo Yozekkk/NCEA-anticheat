@@ -1,123 +1,145 @@
 <div align="center">
 
-**Русский** · [English](README.en.md)
+[**РУССКИЙ**](README.md) · [ENGLISH](README.en.md)
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/hero.svg" /><img src="docs/assets/readme/hero-motion.gif" alt="NCEA AntiCheat — оригинальный пиксельный знак NCEA AC" width="100%" /></picture>
+<img src="docs/assets/angelos-adapted/header.ru.svg" width="100%" alt="VHS-заставка NCEA AntiCheat 1.0.0 Stable, адаптированная из AngelOS" />
 
-**Minecraft Server AntiCheat by [NCEA Studio](https://ncea-studio.com)**
+**NCEA AntiCheat 1.0.0 Stable** · Paper 1.20 / 1.20.1 · Java 17
 
-<img src="docs/assets/readme/stable-badge.svg" alt="1.0.0 Stable" height="38" /> <img src="docs/assets/readme/paper-badge.svg" alt="Paper 1.20 / 1.20.1" height="38" /> <img src="docs/assets/readme/java-badge.svg" alt="Java 17" height="38" /> <img src="docs/assets/readme/gradle-badge.svg" alt="Gradle" height="38" /> <img src="docs/assets/readme/checks-badge.svg" alt="5 checks" height="38" /> [<img src="docs/assets/readme/ci-badge.svg" alt="CI" height="38" />](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
-
-[Установка](#установка) · [Проверки](#движок-обнаружения) · [Консоль](#консоль-ncea-ac) · [Документация](docs/INDEX.md) · [English](README.en.md)
+[NCEA Studio](https://ncea-studio.com) · [Скачать выпуск](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0) · [Документация](docs/INDEX.md)
 
 </div>
 
-<img src="docs/assets/readme/matrix-divider.svg" alt="Декоративная цифровая линия" width="100%" />
+<img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" />
+<img src="docs/assets/angelos-adapted/stamp-evidence.ru.svg" width="240" align="right" alt="Штамп: наблюдение, без автобана" />
 
-## Система
+> **Досье NCEA / 12 записей.** Это визуальная презентация реально выпущенного античита. Кадры с пометкой «схема» показывают работу алгоритмов условно; они не являются игровыми испытаниями. Заимствованные VHS-заставки и анимации адаптированы из MIT-проекта [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Атрибуция](docs/ASSET_CREDITS.md).
 
-NCEA AntiCheat — самостоятельный модульный Paper-плагин студии NCEA. Версия **1.0.0 Stable** собирает признаки подозрительного движения, боя и установки блоков, ведёт независимый Violation Level (VL) для каждой проверки и показывает уведомления персоналу. По умолчанию работает в режиме **OBSERVE**: действие игрока не отменяется, автоматические баны не выдаются.
+<br clear="all" />
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/status.svg" /><img src="docs/assets/readme/stable-status.gif" alt="Статус 1.0.0 Stable: наблюдение" width="100%" /></picture>
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
 
-> [!IMPORTANT]
-> Это стабильный выпуск текущих эвристик. Игровые испытания с подключённым клиентом, реальные доли обнаружения и ложных срабатываний ещё не измерены. Результаты сборки и запуска сервера не заменяют PvP-тестирование.
+<img src="docs/assets/angelos-adapted/tape-01.ru.svg" width="100%" alt="Запись 01: Введение" />
 
-## Движок обнаружения
+### 01 · Дело NCEA
 
-<img src="docs/assets/readme/checks.svg" alt="Пять реально зарегистрированных проверок: Speed, Fly, Reach, AutoClicker, FastPlace" width="100%" />
+Сервер видит события. NCEA AntiCheat собирает из них доказательства, ведёт отдельный **Violation Level** для каждой проверки и уведомляет персонал. Выпуск **1.0.0 Stable** — решение владельца о готовности текущего функционала. Режим по умолчанию — **OBSERVE**: действия игроков не отменяются, автоматические баны не выдаются.
 
-| Проверка | Что измеряет | Статус |
-|---|---|---|
-| **Speed** | Горизонтальное смещение в коротком окне `PlayerMoveEvent` | Работает, эвристика |
-| **Fly** | Длительное почти нулевое вертикальное смещение вне земли | Работает, эвристика |
-| **Reach** | Расстояние от глаз до серверного hitbox цели при уроне | Работает, без компенсации истории пакетов |
-| **AutoClicker** | Число уникальных успешных атак за секунду | Работает, не измеряет все клики |
-| **FastPlace** | Интервалы между успешными установками блоков | Работает, эвристика |
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/stable-release.png" /><img src="docs/assets/angelos-adapted/demos/stable-release.gif" width="100%" alt="Схематическая заставка выпуска 1.0.0 Stable" /></picture>
 
-Проверки учитывают контекстные исключения, ping, TPS и окна после серверных изменений движения. Одиночный сигнал не означает доказанный чит. [Механизмы, пороги и false positives](docs/CHECKS.md).
+<details><summary>✉ Опись 01 · что уже работает</summary>
 
-
-### Пять сигналов — пять визуальных моделей
-
-Иллюстрации ниже показывают алгоритмические идеи. Это не запись игрового детектора.
-
-**Speed**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" alt="Иллюстрация Speed" width="100%" /></picture>
-
-**Fly**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" alt="Иллюстрация Fly" width="100%" /></picture>
-
-**Reach**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" alt="Иллюстрация Reach" width="100%" /></picture>
-
-**AutoClicker**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" alt="Иллюстрация AutoClicker" width="100%" /></picture>
-
-**FastPlace**
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" alt="Иллюстрация FastPlace" width="100%" /></picture>
-
-<img src="docs/assets/readme/digital-snow.svg" alt="Цифровые частицы" width="100%" />
-
-## Архитектура
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" alt="Архитектура NCEA AntiCheat: Paper, ядро проверок, нарушения, конфигурация и оформление" width="100%" /></picture>
-
-`ncea-core` не зависит от Paper: наблюдения, проверки, VL/decay, данные игроков и рендерер. `ncea-paper` обрабатывает события, исключения, YAML, команды и жизненный цикл. Один общий исходный набор отдельно компилируется против Paper API **1.20** и **1.20.1**. [Техническая схема](docs/ARCHITECTURE.md).
-
-## Консоль NCEA AC
-
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" alt="Визуальный предпросмотр консольного баннера" width="100%" /></picture>
-
-<details>
-<summary>Открыть настоящий монохромный вывод логотипа</summary>
-
-```text
-▀█▄████▄      ▄█▀██▄▄     ▄█▀██▄▄    ▄▀▀▀▀▄▄           ▄▀▀▀▀▄▄       ▄█▀██▄▄ 
- ███  ▀██   ▄██   ████  ▄██   ████     ▄▄▄███            ▄▄▄███    ▄██   ████
- ███   ███ ████    ▀▀  ████  ▄██▀   ▄██  ▀███         ▄██  ▀███   ████    ▀▀ 
- ███   ███ ███▀        ███▀▄█▀▀    ██▄█   ▀█▄        ██▄█   ▀█▄   ███▀       
- ▄▀    ▄▀▄ ▀▄▀▀        ▀▄▀▀▌       ▀▄▀▄   ▀▄▀        ▀▄▀▄   ▀▄▀   ▀▄▀▀       
-   ▀    ▀▀     ▄   ▄▄▀     ▄   ▄▄▀  ▀██  ▄███ ▄       ▀██  ▄███ ▄     ▄   ▄▄▀
- ▀▀▀   ▀     ▀▀▀▀▀▀      ▀▀▀▀▀▀        ▀▀ ▀▀ ▀           ▀▀ ▀▀ ▀    ▀▀▀▀▀▀   
-```
-
-Геометрия перенесена из [исходного Bash-шаблона](Ascii/NCEA_AC_original_banner.sh); также в проекте есть [оригинальное изображение](Ascii/Ascii%20final%20result.png). Java не запускает Bash для вывода.
+Пять проверок: **Speed**, **Fly**, **Reach**, **AutoClicker**, **FastPlace**. Есть исключения для легального движения, накопление и снижение VL, уведомления, команды и конфигурация. Пакетных проверок и предиктивной физики пока нет. [Точные ограничения](docs/KNOWN_LIMITATIONS.md).
 
 </details>
 
-<img src="docs/assets/readme/logo-preview.gif" alt="Анимированный предпросмотр исходного пиксельного логотипа, без игровых сцен" width="68%" />
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
 
-*GIF показывает оформление логотипа, а не игровой детектор.* Цвета в серверной консоли включаются консервативно; доступны ANSI 16/256/TrueColor, темы, Unicode/ASCII и пользовательский безопасный шаблон. [Руководство по оформлению](docs/CONSOLE_BRANDING.md) · [Свой баннер](docs/BANNER_CUSTOMIZATION.md).
+<img src="docs/assets/angelos-adapted/tape-02.ru.svg" width="100%" alt="Запись 02: Установка" />
 
-<img src="docs/assets/readme/cyber-divider.svg" alt="Неоновый разделитель" width="100%" />
+### 02 · Подключение к серверу
 
-## Конфигурация
+Возьмите **один** JAR под вашу версию Paper и положите его в `plugins/` сервера на Java 17. После запуска проверьте статус и созданные настройки.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" alt="Иллюстрация YAML-конфигурации" width="100%" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/commands.png" /><img src="docs/assets/angelos-adapted/demos/commands.gif" width="100%" alt="Схема административных команд, не запись реального сервера" /></picture>
 
-Плагин создаёт `config.yml`, `checks.yml`, `branding.yml` и `custom-banner.txt` в `plugins/NCEAAntiCheat/`. Пример:
+<details><summary>✉ Опись 02 · загрузки и первые команды</summary>
 
-```yaml
-# branding.yml
-branding:
-  banner:
-    style: original-3d
-    charset: unicode
-  console:
-    colors: auto
-    color-mode: ansi16
-  theme:
-    name: ncea-original
+| Сервер | Файл |
+|---|---|
+| Paper 1.20 | [NCEA-AntiCheat-1.20.jar](https://github.com/Yozekkk/NCEA-anticheat/releases/download/v1.0.0/NCEA-AntiCheat-1.20.jar) |
+| Paper 1.20.1 | [NCEA-AntiCheat-1.20.1.jar](https://github.com/Yozekkk/NCEA-anticheat/releases/download/v1.0.0/NCEA-AntiCheat-1.20.1.jar) |
+
+```text
+/nceaac status
+/nceaac checks
+/nceaac config validate
 ```
 
+[Подробная установка](docs/INSTALLATION.md) · [Совместимость](docs/COMPATIBILITY.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-03.ru.svg" width="100%" alt="Запись 03: Движок проверок" />
+
+### 03 · Лента доказательств
+
+Каждая проверка создаёт свой сигнал. Движок учитывает вес, порог, cooldown и снижение VL со временем. Отдельный необычный эпизод не является доказанным читом.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/violations.png" /><img src="docs/assets/angelos-adapted/demos/violations.gif" width="100%" alt="Схематическая анимация VL, не реальные данные игрока" /></picture>
+
+<details><summary>✉ Опись 03 · техническая модель</summary>
+
+Проверки обрабатывают нормализованные события Paper; VL независим по проверке и игроку. Исключения и низкий TPS могут подавить сигнал. Последнее доказательство доступно через `/nceaac violations <player>`. [Устройство движка](docs/ARCHITECTURE.md) · [Параметры](docs/CONFIGURATION.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-04.ru.svg" width="100%" alt="Запись 04: Движение" />
+
+### 04 · Координаты в движении
+
+**Speed** анализирует горизонтальные смещения в коротком окне `PlayerMoveEvent`. **Fly** ищет длительное почти нулевое вертикальное смещение вне земли. Оба сигнала требуют контекста: телепортации, эффекты, отбрасывание и задержка сервера меняют допустимое движение.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" width="100%" alt="Схема Speed, не игровая запись" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" width="100%" alt="Схема Fly, не игровая запись" /></picture>
+
+<details><summary>✉ Опись 04 · ложные срабатывания</summary>
+
+Проверки эвристические и не моделируют всю физику Minecraft. Перед применением санкций изучайте доказательство, ping, TPS и обстоятельства движения. [Алгоритмы и ограничения](docs/CHECKS.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-05.ru.svg" width="100%" alt="Запись 05: Бой" />
+
+### 05 · Момент удара
+
+**Reach** измеряет расстояние от глаз атакующего до серверного hitbox цели. **AutoClicker** считает уникальные успешные атаки в секундном окне. Плагин пока не восстанавливает историю пакетов и не видит каждый физический клик мыши.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" width="100%" alt="Схема Reach, не реальное измерение" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" width="100%" alt="Схема AutoClicker, не реальные клики" /></picture>
+
+<details><summary>✉ Опись 05 · точность измерения</summary>
+
+Сетевой ping и задержки учитываются консервативно. Отдельный быстрый удар не запускает наказание. [Пороги и методы](docs/CHECKS.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-06.ru.svg" width="100%" alt="Запись 06: Мир" />
+
+### 06 · Блок за блоком
+
+**FastPlace** оценивает интервалы между успешными установками. Это единственная реализованная world-проверка в версии 1.0.0; Scaffold, Nuker и другие проверки не заявлены как рабочие.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" width="100%" alt="Схема интервалов FastPlace" /></picture>
+
+<details><summary>✉ Опись 06 · контекст</summary>
+
+Серверная задержка, обычное быстрое строительство и временные исключения могут влиять на сигнал. Режим OBSERVE позволяет анализировать уведомления без автоматического наказания. [Справочник](docs/CHECKS.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-07.ru.svg" width="100%" alt="Запись 07: Конфигурация" />
+
+### 07 · Подстройка сигнала
+
+`config.yml`, `checks.yml` и `branding.yml` создаются в `plugins/NCEAAntiCheat/`. Неверные значения не заменяют действующие настройки при reload.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" width="100%" alt="Иллюстрация YAML, не запись интерфейса" /></picture>
+
+<details><summary>✉ Опись 07 · короткий фрагмент</summary>
+
 ```yaml
-# checks.yml — фрагмент; остальные проверки остаются в файле
+# checks.yml
 checks:
   speed:
     enabled: true
@@ -126,73 +148,99 @@ checks:
     alert-threshold: 5.0
 ```
 
-`/nceaac reload` валидирует новые настройки до применения. Режим OBSERVE не выдаёт наказаний. [Конфигурация проверок](docs/CONFIGURATION.md) · [Справочник branding.yml](docs/CONFIG_REFERENCE.md) · [Пресеты](presets/).
-
-## Установка
-
-1. Скачайте JAR для вашей версии Paper из [релиза v1.0.0](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0).
-2. Поместите JAR в папку `plugins/` сервера **Paper 1.20 или 1.20.1**, работающего на **Java 17**.
-3. Запустите сервер и дождитесь сообщения `Status ENABLED` под логотипом.
-4. Проверьте `/nceaac status`, `/nceaac checks`, `/nceaac config validate`.
-5. Настройте созданные YAML и выполните `/nceaac reload`.
-
-<details>
-<summary>Сборка из исходников и локальный предпросмотр</summary>
-
-```bash
-./gradlew clean build
-./gradlew :ncea-paper:previewBanner
+```text
+/nceaac reload
+/nceaac config validate
 ```
 
-Для сборки нужен полный JDK. Исходники компилируются с `--release 17`; итоговые JAR находятся в `dist/`. [Подробная установка](docs/INSTALLATION.md) · [Совместимость](docs/COMPATIBILITY.md).
+[Все настройки](docs/CONFIGURATION.md) · [Оформление](docs/CONFIG_REFERENCE.md).
 
 </details>
 
-## Команды
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
 
-| Команда | Назначение |
-|---|---|
-| `/nceaac status` · `/nceaac version` | Версия и состояние |
-| `/nceaac checks` | Включённость пяти проверок |
-| `/nceaac alerts` | Переключить уведомления для сотрудника |
-| `/nceaac violations <player>` | VL и последнее доказательство игрока онлайн |
-| `/nceaac reset <player>` | Сбросить VL и временные счётчики |
-| `/nceaac exempt <player>` · `/nceaac unexempt <player>` | Временное исключение |
-| `/nceaac reload` · `/nceaac config validate` | Перезагрузка и валидация YAML |
-| `/nceaac performance` | Локальные счётчики и время проверок |
+<img src="docs/assets/angelos-adapted/tape-08.ru.svg" width="100%" alt="Запись 08: Консоль" />
 
-`/nceaac help` показывает список; `profile` и `debug` сейчас используют тот же вывод, что `violations`. [Все команды](docs/COMMANDS.md) · [Права](docs/PERMISSIONS.md).
+### 08 · NCEA AC на экране запуска
 
-## Проверка качества
+Настоящая пиксельная геометрия консольного знака основана на [изображении владельца](Ascii/Ascii%20final%20result.png). Баннер выводится после успешной инициализации. Цветной Unicode, монохромный, ASCII, compact и custom доступны через `branding.yml`.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" alt="Панель тестирования; фактические результаты в таблице" width="100%" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" width="100%" alt="Иллюстративная последовательность консольного запуска" /></picture>
 
-| Проверка | Фактический результат |
-|---|---|
-| JUnit 5 | **77 тестов**, 0 ошибок (60 core, 17 Paper) |
-| JaCoCo | Core **81,4%** строк; Paper **49,2%** |
-| Paper 1.20 / 1.20.1 | Холодный и повторный локальный запуск на Java 17 |
-| Режимы баннера | 16 серверных запусков, восемь режимов на каждой версии |
-| Игровой клиент | Не тестировался |
+<details><summary>✉ Опись 08 · безопасный вывод</summary>
 
-[Методика](docs/TESTING.md) · [Результаты и логи](docs/TEST_RESULTS.md) · [QA](docs/QA_REPORT.md) · [Производительность](docs/PERFORMANCE.md).
+ANSI в автоматическом режиме включается осторожно; ошибочный терминал не должен блокировать загрузку плагина. [Руководство по баннеру](docs/CONSOLE_BRANDING.md) · [Свой шаблон](docs/BANNER_CUSTOMIZATION.md).
 
-## Дальнейшая работа
+</details>
 
-| Сейчас | Планируется |
-|---|---|
-| 5 наблюдательных проверок, VL/decay, исключения, уведомления, команды, брендирование | Пакетный слой, симуляция физики, более точная компенсация задержки, игровые PvP-тесты, измерение false positives и TPS |
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
 
-Автоматические наказания и setbacks требуют отдельной реализации и игровых испытаний; в этой версии они отсутствуют. [Известные ограничения](docs/KNOWN_LIMITATIONS.md).
+<img src="docs/assets/angelos-adapted/tape-09.ru.svg" width="100%" alt="Запись 09: Архитектура" />
 
-## Документация и происхождение
+### 09 · Как проходит событие
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/documentation-panel.svg" /><img src="docs/assets/readme/documentation-panel.gif" alt="Навигация по документации" width="100%" /></picture>
+`ncea-paper` принимает события и создаёт контекст. `ncea-core` хранит состояние игрока, проверки, VL и рендерер. Сборка компилирует общий код отдельно против Paper API 1.20 и 1.20.1.
 
-[Оглавление](docs/INDEX.md) · [Быстрый старт](docs/GETTING_STARTED.md) · [Разработка](docs/DEVELOPMENT.md) · [Карта файлов](docs/FILE_MANIFEST.md) · [История изменений](docs/CHANGELOG.md) · [Release Notes 1.0.0](docs/RELEASE_NOTES_1.0.0.md)
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" width="100%" alt="Схема архитектуры, не запись сервера" /></picture>
 
-<img src="docs/assets/readme/license-badge.svg" alt="All rights reserved" height="38" /> <img src="docs/assets/readme/studio-badge.svg" alt="NCEA Studio" height="38" />
+<details><summary>✉ Опись 09 · модули</summary>
 
-Исходный код продукта разработан для NCEA Studio. Проект распространяется с уведомлением **All rights reserved** в [LICENSE](LICENSE); разрешение на копирование или переработку исходников этим уведомлением не предоставлено. Код исследованных GPL/AGPL-античитов в проект не включён. Лицензии и источники использованных инструментов описаны в [аудите сторонних компонентов](docs/THIRD_PARTY_AUDIT.md).
+Ядро не импортирует Bukkit. Paper API вызывается в подходящем серверном потоке. При выходе игрока его данные очищаются. [Архитектура](docs/ARCHITECTURE.md) · [Разработка](docs/DEVELOPMENT.md).
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/footer.svg" /><img src="docs/assets/readme/neon-footer.gif" alt="NCEA Studio — ncea-studio.com" width="100%" /></picture>
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-10.ru.svg" width="100%" alt="Запись 10: Тестирование" />
+
+### 10 · Протокол, не обещание
+
+**77 JUnit-тестов прошли, 0 ошибок.** Локальные Paper 1.20 и 1.20.1 на Java 17 прошли холодный и повторный запуск. Ядро покрыто JaCoCo по строкам на **81,4%**, Paper-адаптер — на **49,2%**.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" width="100%" alt="Схематическая панель QA; реальные результаты указаны в тексте" /></picture>
+
+<details><summary>✉ Опись 10 · границы теста</summary>
+
+Игровой клиент не подключался. Реальные доли обнаружения и ложных срабатываний, PvP-нагрузка и веб-консоль хостинга не измерены. [Протокол](docs/TEST_RESULTS.md) · [Методика](docs/TESTING.md) · [QA](docs/QA_REPORT.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-11.ru.svg" width="100%" alt="Запись 11: Документация" />
+
+### 11 · Навигация по досье
+
+Пользовательские инструкции, описание проверок и руководство разработчика находятся в `docs/`. Основной текст остаётся доступным для поиска; иллюстрации дополняют его.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/documentation-panel.svg" /><img src="docs/assets/readme/documentation-panel.gif" width="100%" alt="Иллюстрация документации" /></picture>
+
+<details><summary>✉ Опись 11 · открыть документы</summary>
+
+[Оглавление](docs/INDEX.md) · [Быстрый старт](docs/GETTING_STARTED.md) · [Команды](docs/COMMANDS.md) · [Права](docs/PERMISSIONS.md) · [Проверки](docs/CHECKS.md) · [Решение проблем](docs/TROUBLESHOOTING.md) · [История](docs/CHANGELOG.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+
+<img src="docs/assets/angelos-adapted/tape-12.ru.svg" width="100%" alt="Запись 12: NCEA Studio и выпуск" />
+
+### 12 · Конец записи, начало работы
+
+**NCEA Studio** выпускает этот продукт как **1.0.0 Stable** для Paper 1.20/1.20.1. Следующие направления — пакетный слой, более точная физика и игровые испытания. Сейчас они не объявлены реализованными.
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/stable-release.png" /><img src="docs/assets/angelos-adapted/demos/stable-release.gif" width="100%" alt="Заставка Stable-релиза" /></picture>
+
+<details><summary>✉ Опись 12 · права, происхождение и выпуск</summary>
+
+Код NCEA находится под [All rights reserved](LICENSE). Адаптированные SVG AngelOS сохраняют **MIT © 2026 MixaDoDs**; встроенные шрифты имеют отдельные MIT/OFL-уведомления. [Точная атрибуция](docs/ASSET_CREDITS.md) · [Визуальный аудит](docs/README_VISUAL_AUDIT.md) · [Общий аудит](docs/THIRD_PARTY_AUDIT.md) · [Release Notes](docs/RELEASE_NOTES_1.0.0.md).
+
+</details>
+
+<img src="docs/assets/angelos-adapted/end.ru.svg" width="100%" alt="Финальный VHS-экран NCEA Studio" />
+
+<div align="center">
+
+[NCEA Studio](https://ncea-studio.com) · [GitHub Release](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0) · [English](README.en.md)
+
+</div>
