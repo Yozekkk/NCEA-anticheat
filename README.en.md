@@ -10,12 +10,15 @@
 
 </div>
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" /></picture>
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.svg" width="240" align="right" alt="Stamp: observe, no auto ban" /></picture>
+<div align="center">
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="80" alt="" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.svg" width="180" alt="Stamp: observe, no auto ban" /></picture>
+
+</div>
 
 > **NCEA case file / 12 tapes.** This visual narrative describes the product that actually shipped. Images marked *schematic* are conceptual illustrations, not gameplay test footage. The adapted VHS artwork is based on the MIT-licensed [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Asset credits](docs/ASSET_CREDITS.md).
 
-<br clear="all" />
 
 <picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 

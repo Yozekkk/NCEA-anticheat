@@ -10,12 +10,15 @@
 
 </div>
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" /></picture>
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.ru.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.ru.svg" width="240" align="right" alt="Штамп: наблюдение, без автобана" /></picture>
+<div align="center">
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="80" alt="" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.ru.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.ru.svg" width="180" alt="Штамп: наблюдение, без автобана" /></picture>
+
+</div>
 
 > **Досье NCEA / 12 записей.** Это визуальная презентация реально выпущенного античита. Кадры с пометкой «схема» показывают работу алгоритмов условно; они не являются игровыми испытаниями. Заимствованные VHS-заставки и анимации адаптированы из MIT-проекта [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Атрибуция](docs/ASSET_CREDITS.md).
 
-<br clear="all" />
 
 <picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
