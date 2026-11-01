@@ -2,6 +2,8 @@
 
 Выпуск 1.0.0 Stable принят владельцем проекта. Рабочая реализация содержит пять наблюдательных проверок, VL/decay, исключения, команды, YAML и настраиваемый баннер. Статус не подразумевает измеренных detection/false-positive rates: PvP-клиент не подключался. Результаты повторного тестирования, артефакты и GitHub-публикация фиксируются в [TEST_RESULTS](TEST_RESULTS.md) и [Release Notes](RELEASE_NOTES_1.0.0.md).
 
+Релиз опубликован: [v1.0.0](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0), оба JAR приложены. CI релизного коммита [успешен](https://github.com/Yozekkk/NCEA-anticheat/actions/runs/41299793876). Визуальный GitHub-аудит и ограничения зафиксированы в [QA_REPORT](QA_REPORT.md).
+
 Разделы ниже — архивные записи о выпуске 0.1.0 Development. Их значения и прежние решения сохранены для прослеживаемости.
 
 ## Архив: 0.1.0 Development
