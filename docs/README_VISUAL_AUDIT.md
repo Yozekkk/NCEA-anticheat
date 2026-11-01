@@ -38,6 +38,24 @@ Local rendering with `rsvg-convert` and visual inspection covered both headers, 
 
 GitHub rendering and screenshots are recorded below after publication. SVG files retain their built-in reduced-motion rule, but GitHub did not propagate that rule reliably to the SVG displayed through `<img>`. The README therefore uses `<picture>` to select generated PNG still frames for all adapted SVGs and existing static SVG/PNG frames for GIFs. The source uses embedded font subsets (Cozette MIT, Pixeloid Sans/Caveat OFL), with notices in `docs/licenses/`.
 
-## GitHub rendering
+## GitHub rendering — verified
 
-Initial published commit `0663329` was checked in Chromium through GitHub: the Russian README loaded 42 images with no broken sources and showed all 12 tapes. A one-second pair of header screenshots changed by 32,477 pixels in the header region, confirming that the external SVG animation runs on GitHub. Reduced-motion emulation exposed the `<img>` media-query gap; static `<picture>` fallbacks were then added and require post-push revalidation. Full-page comparison screenshots are stored locally in `.local/angelos-reference-full.png` and `.local/ncea-readme-ru-full.png`; they are excluded from Git. At 1280 px width, the NCEA page follows the same header → tapes → demonstrations → final signal screen rhythm as the source. NCEA is shorter because it uses honest technical illustrations instead of AngelOS desktop footage.
+Published GitHub commit `cebfa8817b19cb7cf5a5d470cd2702b28d2d89da` was inspected in Chromium through the live repository page and the English file page.
+
+| View | Result |
+|---|---|
+| Russian README | 42 images loaded, 0 broken; all 12 tapes and their Markdown headings rendered |
+| English README | 42 images loaded, 0 broken; all 12 tapes rendered |
+| Desktop, 1280 px | VHS header, tape rhythm, technical GIFs and end screen inspected in full-page screenshots |
+| Mobile, 390 px | No README horizontal overflow (`clientWidth = scrollWidth = 324 px`); introductory motif corrected after the first live audit |
+| Light and dark GitHub themes | Both inspected visually; text and graphics remained legible |
+| Default motion | 42 animated SVG/GIF sources selected; the external header SVG visibly changed over one second (32,477 pixels in its screenshot region) |
+| Reduced motion | After reload, 42 of 42 `<picture>` blocks selected static PNG/SVG sources in both languages; no image failed |
+| GIF playback | GIFs loaded on GitHub; new GIFs contain 10–18 frames. `paper-startup.gif` replays a real local Paper 1.20.1 log excerpt |
+| Links | Local Markdown/image links resolved from both README files before publication |
+
+An embedded SVG `prefers-reduced-motion` rule alone did **not** stop the header animation when GitHub displayed that SVG through `<img>`. The public README therefore uses generated static PNG stills through `<picture>` for all adapted SVGs, plus static PNG/SVG alternatives for GIFs. This behavior was retested on the live page.
+
+Full-page screenshots are stored locally (excluded from Git): `.local/angelos-reference-full.png` (1280×20741), `.local/ncea-readme-ru-full-final.png` (1280×10503) and `.local/ncea-readme-en-desktop-full.png`. The NCEA page is shorter than AngelOS because the NCEA product has five checks and no desktop footage to show. The shared composition is clearly visible: VHS hero, 12 cassette chapter cards, animated tracking strips, technical footage, collapsible inventories and blue signal-loss finale.
+
+The current Java/Gradle sources, two released JARs and the existing `v1.0.0` tag were not changed. [GitHub Actions for the mobile-layout commit](https://github.com/Yozekkk/NCEA-anticheat/actions/runs/41333293870) completed successfully.
