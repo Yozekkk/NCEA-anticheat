@@ -11,7 +11,7 @@
 | `Ascii/` | Предоставленный Bash-референс и описание; не исполняется плагином |
 | `docs/` | Пользовательская и техническая документация |
 | `docs/assets/readme/` | 25 оригинальных SVG и 14 GIF для hero, пяти проверок, архитектуры, консоли, конфигурации, тестирования, документации, статуса и футера; статические SVG используются при reduced motion |
-| `scripts/generate_readme_assets.py` | Воспроизводимая генерация графики из локального NCEA AC PNG; нужен Pillow только для этого скрипта |
+| `scripts/generate_readme_assets.py` | Воспроизводимая генерация графики из локального NCEA AC PNG; нужны Pillow и `rsvg-convert` только для этого скрипта |
 | `.github/workflows/ci.yml` | Java 17 CI: JUnit, обе Paper-сборки, проверка JAR и artifact upload |
 | `scripts/integration_smoke.py` | Локальный Paper smoke QA, требует официальные JAR |
 | `scripts/list-project-paths.sh` | Проверяемый список абсолютных путей |
