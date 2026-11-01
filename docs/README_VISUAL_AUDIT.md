@@ -49,7 +49,7 @@ Published GitHub commit `cebfa8817b19cb7cf5a5d470cd2702b28d2d89da` was inspected
 | Desktop, 1280 px | VHS header, tape rhythm, technical GIFs and end screen inspected in full-page screenshots |
 | Mobile, 390 px | No README horizontal overflow (`clientWidth = scrollWidth = 324 px`); introductory motif corrected after the first live audit |
 | Light and dark GitHub themes | Both inspected visually; text and graphics remained legible |
-| Default motion | 42 animated SVG/GIF sources selected; the external header SVG visibly changed over one second (32,477 pixels in its screenshot region) |
+| Default motion | 42 SVG/GIF sources selected; the external header SVG visibly changed over one second (32,477 pixels in its screenshot region) |
 | Reduced motion | After reload, 42 of 42 `<picture>` blocks selected static PNG/SVG sources in both languages; no image failed |
 | GIF playback | GIFs loaded on GitHub; new GIFs contain 10–18 frames. `paper-startup.gif` replays a real local Paper 1.20.1 log excerpt |
 | Links | Local Markdown/image links resolved from both README files before publication |
