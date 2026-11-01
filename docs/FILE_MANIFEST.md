@@ -27,7 +27,7 @@
 
 ## Материалы AngelOS-адаптации
 
-- `docs/assets/angelos-adapted/` — 34 адаптированных SVG и три новых схематических GIF в `demos/`.
+- `docs/assets/angelos-adapted/` — 34 адаптированных SVG, 34 статичных PNG для reduced motion и три новых схематических GIF и один GIF повтора реального локального лога запуска в `demos/`.
 - `docs/licenses/` — MIT AngelOS, MIT Cozette и SIL OFL для встроенных шрифтов.
 - `docs/ASSET_CREDITS.md` — атрибуция каждого заимствованного SVG.
 - `docs/README_VISUAL_AUDIT.md` — сравнение и результаты просмотра.

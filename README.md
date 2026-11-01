@@ -2,7 +2,7 @@
 
 [**РУССКИЙ**](README.md) · [ENGLISH](README.en.md)
 
-<img src="docs/assets/angelos-adapted/header.ru.svg" width="100%" alt="VHS-заставка NCEA AntiCheat 1.0.0 Stable, адаптированная из AngelOS" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/header.ru.png" /><img src="docs/assets/angelos-adapted/header.ru.svg" width="100%" alt="VHS-заставка NCEA AntiCheat 1.0.0 Stable, адаптированная из AngelOS" /></picture>
 
 **NCEA AntiCheat 1.0.0 Stable** · Paper 1.20 / 1.20.1 · Java 17
 
@@ -10,16 +10,16 @@
 
 </div>
 
-<img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" />
-<img src="docs/assets/angelos-adapted/stamp-evidence.ru.svg" width="240" align="right" alt="Штамп: наблюдение, без автобана" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.ru.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.ru.svg" width="240" align="right" alt="Штамп: наблюдение, без автобана" /></picture>
 
 > **Досье NCEA / 12 записей.** Это визуальная презентация реально выпущенного античита. Кадры с пометкой «схема» показывают работу алгоритмов условно; они не являются игровыми испытаниями. Заимствованные VHS-заставки и анимации адаптированы из MIT-проекта [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Атрибуция](docs/ASSET_CREDITS.md).
 
 <br clear="all" />
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-01.ru.svg" width="100%" alt="Запись 01: Введение" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-01.ru.png" /><img src="docs/assets/angelos-adapted/tape-01.ru.svg" width="100%" alt="Запись 01: Введение" /></picture>
 
 ### 01 · Дело NCEA
 
@@ -33,9 +33,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-02.ru.svg" width="100%" alt="Запись 02: Установка" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-02.ru.png" /><img src="docs/assets/angelos-adapted/tape-02.ru.svg" width="100%" alt="Запись 02: Установка" /></picture>
 
 ### 02 · Подключение к серверу
 
@@ -60,9 +60,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-03.ru.svg" width="100%" alt="Запись 03: Движок проверок" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-03.ru.png" /><img src="docs/assets/angelos-adapted/tape-03.ru.svg" width="100%" alt="Запись 03: Движок проверок" /></picture>
 
 ### 03 · Лента доказательств
 
@@ -76,9 +76,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-04.ru.svg" width="100%" alt="Запись 04: Движение" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-04.ru.png" /><img src="docs/assets/angelos-adapted/tape-04.ru.svg" width="100%" alt="Запись 04: Движение" /></picture>
 
 ### 04 · Координаты в движении
 
@@ -93,9 +93,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-05.ru.svg" width="100%" alt="Запись 05: Бой" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-05.ru.png" /><img src="docs/assets/angelos-adapted/tape-05.ru.svg" width="100%" alt="Запись 05: Бой" /></picture>
 
 ### 05 · Момент удара
 
@@ -110,9 +110,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-06.ru.svg" width="100%" alt="Запись 06: Мир" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-06.ru.png" /><img src="docs/assets/angelos-adapted/tape-06.ru.svg" width="100%" alt="Запись 06: Мир" /></picture>
 
 ### 06 · Блок за блоком
 
@@ -126,9 +126,9 @@
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-07.ru.svg" width="100%" alt="Запись 07: Конфигурация" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-07.ru.png" /><img src="docs/assets/angelos-adapted/tape-07.ru.svg" width="100%" alt="Запись 07: Конфигурация" /></picture>
 
 ### 07 · Подстройка сигнала
 
@@ -157,15 +157,15 @@ checks:
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-08.ru.svg" width="100%" alt="Запись 08: Консоль" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-08.ru.png" /><img src="docs/assets/angelos-adapted/tape-08.ru.svg" width="100%" alt="Запись 08: Консоль" /></picture>
 
 ### 08 · NCEA AC на экране запуска
 
 Настоящая пиксельная геометрия консольного знака основана на [изображении владельца](Ascii/Ascii%20final%20result.png). Баннер выводится после успешной инициализации. Цветной Unicode, монохромный, ASCII, compact и custom доступны через `branding.yml`.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" width="100%" alt="Иллюстративная последовательность консольного запуска" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/paper-startup.png" /><img src="docs/assets/angelos-adapted/demos/paper-startup.gif" width="100%" alt="Анимированный повтор реального локального лога запуска Paper 1.20.1" /></picture>
 
 <details><summary>✉ Опись 08 · безопасный вывод</summary>
 
@@ -173,9 +173,9 @@ ANSI в автоматическом режиме включается осто�
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-09.ru.svg" width="100%" alt="Запись 09: Архитектура" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-09.ru.png" /><img src="docs/assets/angelos-adapted/tape-09.ru.svg" width="100%" alt="Запись 09: Архитектура" /></picture>
 
 ### 09 · Как проходит событие
 
@@ -189,9 +189,9 @@ ANSI в автоматическом режиме включается осто�
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-10.ru.svg" width="100%" alt="Запись 10: Тестирование" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-10.ru.png" /><img src="docs/assets/angelos-adapted/tape-10.ru.svg" width="100%" alt="Запись 10: Тестирование" /></picture>
 
 ### 10 · Протокол, не обещание
 
@@ -205,9 +205,9 @@ ANSI в автоматическом режиме включается осто�
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-11.ru.svg" width="100%" alt="Запись 11: Документация" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-11.ru.png" /><img src="docs/assets/angelos-adapted/tape-11.ru.svg" width="100%" alt="Запись 11: Документация" /></picture>
 
 ### 11 · Навигация по досье
 
@@ -221,9 +221,9 @@ ANSI в автоматическом режиме включается осто�
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="Сетевой VHS-разделитель" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-12.ru.svg" width="100%" alt="Запись 12: NCEA Studio и выпуск" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-12.ru.png" /><img src="docs/assets/angelos-adapted/tape-12.ru.svg" width="100%" alt="Запись 12: NCEA Studio и выпуск" /></picture>
 
 ### 12 · Конец записи, начало работы
 
@@ -237,7 +237,7 @@ ANSI в автоматическом режиме включается осто�
 
 </details>
 
-<img src="docs/assets/angelos-adapted/end.ru.svg" width="100%" alt="Финальный VHS-экран NCEA Studio" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/end.ru.png" /><img src="docs/assets/angelos-adapted/end.ru.svg" width="100%" alt="Финальный VHS-экран NCEA Studio" /></picture>
 
 <div align="center">
 

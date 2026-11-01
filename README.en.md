@@ -2,7 +2,7 @@
 
 [РУССКИЙ](README.md) · [**ENGLISH**](README.en.md)
 
-<img src="docs/assets/angelos-adapted/header.svg" width="100%" alt="NCEA AntiCheat 1.0.0 Stable VHS header adapted from AngelOS" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/header.png" /><img src="docs/assets/angelos-adapted/header.svg" width="100%" alt="NCEA AntiCheat 1.0.0 Stable VHS header adapted from AngelOS" /></picture>
 
 **NCEA AntiCheat 1.0.0 Stable** · Paper 1.20 / 1.20.1 · Java 17
 
@@ -10,16 +10,16 @@
 
 </div>
 
-<img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" />
-<img src="docs/assets/angelos-adapted/stamp-evidence.svg" width="240" align="right" alt="Stamp: observe, no auto ban" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-tl.png" /><img src="docs/assets/angelos-adapted/cobweb-tl.svg" width="110" align="left" alt="" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/stamp-evidence.png" /><img src="docs/assets/angelos-adapted/stamp-evidence.svg" width="240" align="right" alt="Stamp: observe, no auto ban" /></picture>
 
 > **NCEA case file / 12 tapes.** This visual narrative describes the product that actually shipped. Images marked *schematic* are conceptual illustrations, not gameplay test footage. The adapted VHS artwork is based on the MIT-licensed [AngelOS-Dotfiles](https://github.com/MixaDoDs/AngelOS-Dotfiles) © 2026 MixaDoDs. [Asset credits](docs/ASSET_CREDITS.md).
 
 <br clear="all" />
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-01.svg" width="100%" alt="Tape 01: Introduction" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-01.png" /><img src="docs/assets/angelos-adapted/tape-01.svg" width="100%" alt="Tape 01: Introduction" /></picture>
 
 ### 01 · The NCEA case
 
@@ -33,9 +33,9 @@ Five checks: **Speed**, **Fly**, **Reach**, **AutoClicker**, and **FastPlace**. 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-02.svg" width="100%" alt="Tape 02: Installation" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-02.png" /><img src="docs/assets/angelos-adapted/tape-02.svg" width="100%" alt="Tape 02: Installation" /></picture>
 
 ### 02 · Connect the server
 
@@ -60,9 +60,9 @@ Choose **one** JAR matching your Paper version and place it in `plugins/` on a J
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-03.svg" width="100%" alt="Tape 03: Detection Engine" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-03.png" /><img src="docs/assets/angelos-adapted/tape-03.svg" width="100%" alt="Tape 03: Detection Engine" /></picture>
 
 ### 03 · The evidence reel
 
@@ -76,9 +76,9 @@ Checks process normalized Paper events. VL is independent per player and check. 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-04.svg" width="100%" alt="Tape 04: Movement Checks" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-04.png" /><img src="docs/assets/angelos-adapted/tape-04.svg" width="100%" alt="Tape 04: Movement Checks" /></picture>
 
 ### 04 · Coordinates in motion
 
@@ -93,9 +93,9 @@ These are heuristics; they do not simulate every Minecraft physics rule. Review 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-05.svg" width="100%" alt="Tape 05: Combat Checks" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-05.png" /><img src="docs/assets/angelos-adapted/tape-05.svg" width="100%" alt="Tape 05: Combat Checks" /></picture>
 
 ### 05 · The moment of attack
 
@@ -110,9 +110,9 @@ Ping and delay are treated conservatively. One fast attack does not trigger a pu
 
 </details>
 
-<img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/divider.png" /><img src="docs/assets/angelos-adapted/divider.svg" width="100%" alt="VHS tracking divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-06.svg" width="100%" alt="Tape 06: World Checks" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-06.png" /><img src="docs/assets/angelos-adapted/tape-06.svg" width="100%" alt="Tape 06: World Checks" /></picture>
 
 ### 06 · Block after block
 
@@ -126,9 +126,9 @@ Server lag, legitimate fast building, and temporary exemptions affect the signal
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-07.svg" width="100%" alt="Tape 07: Configuration" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-07.png" /><img src="docs/assets/angelos-adapted/tape-07.svg" width="100%" alt="Tape 07: Configuration" /></picture>
 
 ### 07 · Tune the signal
 
@@ -157,15 +157,15 @@ checks:
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-08.svg" width="100%" alt="Tape 08: Console Branding" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-08.png" /><img src="docs/assets/angelos-adapted/tape-08.svg" width="100%" alt="Tape 08: Console Branding" /></picture>
 
 ### 08 · NCEA AC on startup
 
 The real pixel geometry of the console mark comes from the [owner's supplied image](Ascii/Ascii%20final%20result.png). The banner appears only after successful initialization. Color Unicode, monochrome, ASCII, compact, and custom modes are configured through `branding.yml`.
 
-<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" width="100%" alt="Illustrative console startup sequence" /></picture>
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/demos/paper-startup.png" /><img src="docs/assets/angelos-adapted/demos/paper-startup.gif" width="100%" alt="Animated replay of a real local Paper 1.20.1 startup log" /></picture>
 
 <details><summary>✉ Inventory 08 · safe output</summary>
 
@@ -173,9 +173,9 @@ Automatic ANSI detection is conservative; an unsuitable terminal must not block 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-09.svg" width="100%" alt="Tape 09: Architecture" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-09.png" /><img src="docs/assets/angelos-adapted/tape-09.svg" width="100%" alt="Tape 09: Architecture" /></picture>
 
 ### 09 · How an event travels
 
@@ -189,9 +189,9 @@ Core has no Bukkit imports. Paper API stays on the appropriate server thread. Pl
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-10.svg" width="100%" alt="Tape 10: Testing" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-10.png" /><img src="docs/assets/angelos-adapted/tape-10.svg" width="100%" alt="Tape 10: Testing" /></picture>
 
 ### 10 · A report, not a promise
 
@@ -205,9 +205,9 @@ No Minecraft client was connected. Real detection and false-positive rates, PvP 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-11.svg" width="100%" alt="Tape 11: Documentation" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-11.png" /><img src="docs/assets/angelos-adapted/tape-11.svg" width="100%" alt="Tape 11: Documentation" /></picture>
 
 ### 11 · Navigate the archive
 
@@ -221,9 +221,9 @@ User guides, check definitions, and developer notes live in `docs/`. Searchable 
 
 </details>
 
-<img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/cobweb-divider.png" /><img src="docs/assets/angelos-adapted/cobweb-divider.svg" width="100%" alt="VHS signal web divider" /></picture>
 
-<img src="docs/assets/angelos-adapted/tape-12.svg" width="100%" alt="Tape 12: NCEA Studio and Release" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/tape-12.png" /><img src="docs/assets/angelos-adapted/tape-12.svg" width="100%" alt="Tape 12: NCEA Studio and Release" /></picture>
 
 ### 12 · End of tape, start of work
 
@@ -237,7 +237,7 @@ NCEA code remains [All rights reserved](LICENSE). Adapted AngelOS SVGs retain **
 
 </details>
 
-<img src="docs/assets/angelos-adapted/end.svg" width="100%" alt="NCEA Studio VHS end screen" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/angelos-adapted/end.png" /><img src="docs/assets/angelos-adapted/end.svg" width="100%" alt="NCEA Studio VHS end screen" /></picture>
 
 <div align="center">
 

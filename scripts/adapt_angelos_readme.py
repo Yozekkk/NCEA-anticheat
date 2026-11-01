@@ -10,6 +10,8 @@ import base64
 import io
 import re
 import sys
+import shutil
+import subprocess
 from pathlib import Path
 from xml.sax.saxutils import escape
 import xml.etree.ElementTree as ET
@@ -21,6 +23,7 @@ SOURCE = Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path('/tmp/ncea-ang
 COMMIT = 'e5f771cfee9dedf81b6e4a648dd53c763d904e09'
 OUT = ROOT/'docs/assets/angelos-adapted'
 OUT.mkdir(parents=True,exist_ok=True)
+if not shutil.which('rsvg-convert'):raise SystemExit('rsvg-convert is required for static PNG fallbacks')
 FOOTAGE = SOURCE/'docs/readme/footage'
 if not FOOTAGE.is_dir(): raise SystemExit('AngelOS source footage is missing')
 
@@ -108,5 +111,8 @@ for name in files:
  if name.startswith('header'):s=re.sub(r'<title>.*?</title>','<title>NCEA AntiCheat 1.0.0 Stable - VHS header</title>',s,count=1)
  else:s=re.sub(r'<title>.*?</title>',f'<title>NCEA AntiCheat - {name}</title>',s,count=1)
  ET.fromstring(s)
- (OUT/name).write_text(s)
+ target=OUT/name
+ target.write_text(s)
+ width=min(1000,int(ET.fromstring(s).attrib.get('width','1000')))
+ subprocess.run(['rsvg-convert','-w',str(width),str(target),'-o',str(target.with_suffix('.png'))],check=True)
 print('Adapted',len(files),'SVG files; source commit',COMMIT)

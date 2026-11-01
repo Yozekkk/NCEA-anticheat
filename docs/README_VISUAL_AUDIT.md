@@ -28,7 +28,7 @@ The source files were inspected as SVG code. `header.svg` retains the 1280×560 
 | `tape-12.svg`, `.ru.svg` | `tape-12*.svg` | NCEA Studio / Release | Damaged tape and signal-loss animation | MIT + font notices | Rendered in 12-tape sheet |
 | `end.svg`, `end.ru.svg` | `end*.svg` | NCEA Studio, end of report | Blue signal-loss frame, flicker, OSD | MIT + font notice | Rendered EN/RU |
 
-The exhaustive **34-row per-file license record** is [ASSET_CREDITS.md](ASSET_CREDITS.md). No AngelOS GIF or desktop image was transferred. `commands.gif`, `violations.gif`, and `stable-release.gif` are newly generated NCEA schematics with PNG reduced-motion alternatives. Older NCEA technical GIFs are reused and remain labeled as illustrations.
+The exhaustive **34-row per-file license record** is [ASSET_CREDITS.md](ASSET_CREDITS.md). No AngelOS GIF or desktop image was transferred. `commands.gif`, `violations.gif`, and `stable-release.gif` are newly generated NCEA schematics; `paper-startup.gif` replays a real local Paper 1.20.1 startup excerpt. All four have PNG reduced-motion alternatives. Older NCEA technical GIFs are reused and remain labeled as illustrations.
 
 ## Composition and local inspection
 
@@ -36,8 +36,8 @@ The README follows the upstream visual sequence: large VHS header, left/right de
 
 Local rendering with `rsvg-convert` and visual inspection covered both headers, EN/RU 12-tape contact sheets, individual tape 03, corrected tape 09, and end screen. No clipping was found in the inspected views. The English tape 09 initially retained its source title because the apostrophe was XML-escaped; the generator was corrected and the output re-rendered.
 
-GitHub rendering and screenshots are recorded below after publication. SVG files retain their built-in reduced-motion rule; animated GIFs use `<picture>` static sources. The source uses embedded font subsets (Cozette MIT, Pixeloid Sans/Caveat OFL), with notices in `docs/licenses/`.
+GitHub rendering and screenshots are recorded below after publication. SVG files retain their built-in reduced-motion rule, but GitHub did not propagate that rule reliably to the SVG displayed through `<img>`. The README therefore uses `<picture>` to select generated PNG still frames for all adapted SVGs and existing static SVG/PNG frames for GIFs. The source uses embedded font subsets (Cozette MIT, Pixeloid Sans/Caveat OFL), with notices in `docs/licenses/`.
 
 ## GitHub rendering
 
-Publication verification pending. This section will record image loading, motion, light/dark/mobile views and screenshots after push.
+Initial published commit `0663329` was checked in Chromium through GitHub: the Russian README loaded 42 images with no broken sources and showed all 12 tapes. A one-second pair of header screenshots changed by 32,477 pixels in the header region, confirming that the external SVG animation runs on GitHub. Reduced-motion emulation exposed the `<img>` media-query gap; static `<picture>` fallbacks were then added and require post-push revalidation. Full-page comparison screenshots are stored locally in `.local/angelos-reference-full.png` and `.local/ncea-readme-ru-full.png`; they are excluded from Git. At 1280 px width, the NCEA page follows the same header → tapes → demonstrations → final signal screen rhythm as the source. NCEA is shorter because it uses honest technical illustrations instead of AngelOS desktop footage.

@@ -72,4 +72,23 @@ for n in range(12):
  d.text((125,225),'PAPER 1.20  /  1.20.1',font=FONT21,fill=COL['muted'])
  frames.append(im)
 save('stable-release.gif',frames)
-print('Generated',len(list(OUT.glob('*.gif'))),'NCEA schematic GIFs with static PNG fallbacks')
+# A separate GIF replays the actual local Paper 1.20.1 startup log excerpt.
+# Logger prefixes are omitted only in the visualization for readability.
+excerpt=ROOT/'docs/assets/angelos-adapted/startup-excerpt.txt'
+if excerpt.is_file():
+ lines=[line.split('] ',1)[1] for line in excerpt.read_text().splitlines()]
+ assert len(lines)==17 and any('Status         ENABLED' in line for line in lines)
+ mono=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf',16)
+ recorded=[]
+ for n in range(len(lines)+1):
+  im=Image.new('RGB',(960,500),COL['bg']);d=ImageDraw.Draw(im)
+  d.rectangle((7,7,952,492),outline=COL['blue'],width=2)
+  d.text((28,18),'LOCAL PAPER 1.20.1 / REAL STARTUP LOG',font=FONT21,fill=COL['cyan'])
+  d.text((28,48),'01.11.2026 · PREFIXES OMITTED FOR READABILITY',font=FONT16,fill=COL['muted'])
+  d.line((28,75,928,75),fill=COL['purple'],width=2)
+  for i,line in enumerate(lines[:n]):
+   color=COL['green'] if 'ENABLED' in line else COL['white'] if i<7 else COL['muted']
+   d.text((27,86+i*23),line,font=mono,fill=color)
+  recorded.append(im)
+ save('paper-startup.gif',recorded)
+print('Generated',len(list(OUT.glob('*.gif'))),'NCEA GIFs with static PNG fallbacks')

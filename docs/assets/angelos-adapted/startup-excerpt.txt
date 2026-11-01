@@ -1,0 +1,17 @@
+[11:56:38 INFO]: [NCEAAntiCheat] Enabling NCEAAntiCheat v1.0.0
+[11:56:38 INFO]: [NCEAAntiCheat] ▀█▄████▄      ▄█▀██▄▄     ▄█▀██▄▄    ▄▀▀▀▀▄▄           ▄▀▀▀▀▄▄       ▄█▀██▄▄
+[11:56:38 INFO]: [NCEAAntiCheat]  ███  ▀██   ▄██   ████  ▄██   ████     ▄▄▄███            ▄▄▄███    ▄██   ████
+[11:56:38 INFO]: [NCEAAntiCheat]  ███   ███ ████    ▀▀  ████  ▄██▀   ▄██  ▀███         ▄██  ▀███   ████    ▀▀
+[11:56:38 INFO]: [NCEAAntiCheat]  ███   ███ ███▀        ███▀▄█▀▀    ██▄█   ▀█▄        ██▄█   ▀█▄   ███▀
+[11:56:38 INFO]: [NCEAAntiCheat]  ▄▀    ▄▀▄ ▀▄▀▀        ▀▄▀▀▌       ▀▄▀▄   ▀▄▀        ▀▄▀▄   ▀▄▀   ▀▄▀▀
+[11:56:38 INFO]: [NCEAAntiCheat]    ▀    ▀▀     ▄   ▄▄▀     ▄   ▄▄▀  ▀██  ▄███ ▄       ▀██  ▄███ ▄     ▄   ▄▄▀
+[11:56:38 INFO]: [NCEAAntiCheat]  ▀▀▀   ▀     ▀▀▀▀▀▀      ▀▀▀▀▀▀        ▀▀ ▀▀ ▀           ▀▀ ▀▀ ▀    ▀▀▀▀▀▀
+[11:56:38 INFO]: [NCEAAntiCheat]                          NCEA AntiCheat
+[11:56:38 INFO]: [NCEAAntiCheat]                          Developed by NCEA Studio
+[11:56:38 INFO]: [NCEAAntiCheat]                          Version        1.0.0
+[11:56:38 INFO]: [NCEAAntiCheat]                          Platform       Paper 1.20.1
+[11:56:38 INFO]: [NCEAAntiCheat]                          Java           17
+[11:56:38 INFO]: [NCEAAntiCheat]                          Active Checks  5
+[11:56:38 INFO]: [NCEAAntiCheat]                          Mode           OBSERVE
+[11:56:38 INFO]: [NCEAAntiCheat]                          Startup        91 ms
+[11:56:38 INFO]: [NCEAAntiCheat]                          Status         ENABLED
