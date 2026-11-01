@@ -1,0 +1,21 @@
+name: NCEAAntiCheat
+version: 0.1.0-dev
+main: com.ncea.anticheat.paper.NceaPlugin
+api-version: '1.20'
+author: NCEA Studio
+website: https://ncea-studio.com
+description: Conservative anticheat checks for Paper 1.20 and 1.20.1
+commands:
+  nceaac:
+    description: NCEA administration
+    usage: /nceaac help
+permissions:
+  nceaac.admin:
+    description: Administrative commands
+    default: op
+  nceaac.alerts:
+    description: Receive alerts after toggling them on
+    default: op
+  nceaac.bypass:
+    description: Exempt from checks
+    default: false

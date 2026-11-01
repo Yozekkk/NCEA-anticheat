@@ -1,0 +1,3 @@
+NCEA AC
+NCEA AntiCheat ${version} | Paper ${platform}
+Checks: ${checks} | Mode: ${mode} | Status: ${status}

@@ -1,0 +1,23 @@
+# Schema version (integer; currently 1).
+schema-version: 1
+# Ignore measurements above this latency (milliseconds; 50..1000).
+max-ping: 250
+# Ignore measurements below this server TPS (number; 10..20).
+min-tps: 18.0
+# Console startup banner. Colors are used only when a terminal is detected; logger output stays plain elsewhere.
+console:
+  banner:
+    # boolean; default true.
+    enabled: true
+    # classic | 3d | compact | disabled; default 3d.
+    style: 3d
+    # boolean; default false. ANSI only on interactive terminals with TERM set.
+    colors: false
+    # boolean; default true.
+    show-version: true
+    # boolean; default true.
+    show-server: true
+    # boolean; default true.
+    show-checks: true
+    # boolean; default true.
+    show-startup-time: true

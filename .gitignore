@@ -1,0 +1,32 @@
+# Gradle and generated artifacts
+.gradle/
+**/build/
+dist/
+
+# Local Paper servers and machine-specific diagnostics
+.integration/
+.local/
+logs/
+crash-reports/
+*.log
+*.hprof
+*.jfr
+
+# Local credentials and environment
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# Task prompt supplied with the logo; source Bash and PNG remain public
+Ascii/NCEA_AC_Codex_prompt_with_Bash.md

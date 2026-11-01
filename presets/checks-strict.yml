@@ -1,0 +1,30 @@
+# Schema version (integer; currently 1).
+schema-version: 1
+# Each check: enabled (boolean), weight (number >0..10), decay (VL/s 0..10), alert-threshold (VL 1..100).
+# All checks are passive; flags never cancel actions or punish players.
+checks:
+  speed:
+    enabled: true
+    weight: 1.5
+    decay: 0.2
+    alert-threshold: 4.0
+  fly:
+    enabled: true
+    weight: 1.5
+    decay: 0.2
+    alert-threshold: 4.0
+  reach:
+    enabled: true
+    weight: 1.5
+    decay: 0.2
+    alert-threshold: 4.0
+  autoclicker:
+    enabled: true
+    weight: 0.75
+    decay: 0.3
+    alert-threshold: 5.0
+  fastplace:
+    enabled: true
+    weight: 0.75
+    decay: 0.3
+    alert-threshold: 5.0

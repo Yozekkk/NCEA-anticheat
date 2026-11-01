@@ -1,0 +1,51 @@
+# NCEA AntiCheat console branding schema. UTF-8. Default logo from Ascii/NCEA_AC_original_banner.sh.
+schema-version: 1
+branding:
+  # Master switch for startup and shutdown branding. Boolean.
+  enabled: true
+  banner:
+    # Startup logo switch. Boolean.
+    enabled: true
+    # original-3d | monochrome | ascii | compact | custom | disabled.
+    style: original-3d
+    # unicode | ascii | auto. Unicode is required for the original geometry.
+    charset: unicode
+    # left | center. Center uses width below, not the host console width.
+    alignment: center
+    # auto or integer 20..120 terminal cells. Narrow widths use fallback.
+    width: auto
+    # compact | ascii | disabled, used if Unicode/width is unavailable.
+    fallback: compact
+  console:
+    # auto | on | off. Auto enables ANSI only for an interactive compatible console.
+    colors: auto
+    # ansi16 | ansi256 | truecolor. Ignored when colors are off.
+    color-mode: ansi16
+  theme:
+    # ncea-original | ncea-purple | ncea-cyan | monochrome | custom.
+    name: ncea-original
+    custom:
+      # HEX #RRGGBB values used when theme.name is custom.
+      primary: '#5555FF'
+      shadow: '#0000AA'
+      accent: '#AAAAAA'
+      # Reference background for HTML preview; never forces a terminal background.
+      background: '#000000'
+  information:
+    # Boolean switches for fields below the logo.
+    show-version: true
+    show-studio: true
+    show-platform: true
+    show-java: true
+    show-checks: true
+    show-mode: true
+    show-startup-time: true
+    show-status: true
+  shutdown:
+    # Boolean; suppresses the short shutdown message when false.
+    enabled: true
+    # compact (two lines) | single-line.
+    style: compact
+  custom:
+    # Safe filename in the plugin data folder; .txt only, max 8192 bytes.
+    file: custom-banner.txt
