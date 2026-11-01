@@ -1,6 +1,6 @@
 # Брендинг NCEA AntiCheat
 
-**Продукт:** NCEA AntiCheat · **Студия:** [NCEA Studio](https://ncea-studio.com) · **Выпуск:** 0.1.0 Development
+**Продукт:** NCEA AntiCheat · **Студия:** [NCEA Studio](https://ncea-studio.com) · **Выпуск:** 1.0.0 Stable
 
 ## Подлинный знак NCEA AC
 
@@ -13,3 +13,7 @@
 `branding.yml` управляет стилями `original-3d`, `monochrome`, `ascii`, `compact`, `custom`, `disabled`; темами `ncea-original`, `ncea-purple`, `ncea-cyan`, `monochrome`, `custom`; ANSI 16/256/TrueColor и безопасным автоматическим режимом. По умолчанию исходная Unicode-геометрия выводится один раз при успешной загрузке, а ANSI разрешается только при консервативном определении совместимого терминала. Панель хостинга может добавлять префикс к каждой строке; её отображение следует проверять отдельно.
 
 [Руководство по консоли](CONSOLE_BRANDING.md) · [Настройки](CONFIG_REFERENCE.md) · [Аудит ресурсов](THIRD_PARTY_AUDIT.md)
+
+## Визуальный стиль README 1.0.0
+
+Палитра: `#070914`, `#090C25`, `#5555FF`, `#8358FF`, `#35D5FF`, `#F1F5FF`, `#9DA3BF`, `#39E6A2`. Все иллюстрации в `assets/readme/` созданы локальным генератором `scripts/generate_readme_assets.py`. Пиксельный знак берётся из предоставленного владельцем `Ascii/Ascii final result.png`. Шрифты не встраиваются и не загружаются извне; SVG используют системные fallback. GIF демонстрируют оформление, а не реальные игровые метрики.

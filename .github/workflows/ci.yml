@@ -32,9 +32,9 @@ jobs:
           test -s dist/NCEA-AntiCheat-1.20.1.jar
           unzip -t dist/NCEA-AntiCheat-1.20.jar | tail -1
           unzip -t dist/NCEA-AntiCheat-1.20.1.jar | tail -1
-      - name: Upload development artifacts
+      - name: Upload stable build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ncea-anticheat-development
+          name: ncea-anticheat-1.0.0
           path: dist/NCEA-AntiCheat-*.jar
           if-no-files-found: error

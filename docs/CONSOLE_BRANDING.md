@@ -1,6 +1,6 @@
 # Консольное оформление NCEA AntiCheat
 
-Официальное оформление NCEA Studio для выпуска **0.1.0 Development**. Исходник пиксельной геометрии — [`Ascii/NCEA_AC_original_banner.sh`](../Ascii/NCEA_AC_original_banner.sh); Java не выполняет Bash. В каталоге `Ascii/` также есть текстовое описание. Оригинальное изображение `Ascii/Ascii final result.png` найдено при подготовке GitHub-публикации и использовано как визуальный эталон README; HTML и Python-референсы не обнаружены.
+Официальное оформление NCEA Studio для выпуска **1.0.0 Stable**. Исходник пиксельной геометрии — [`Ascii/NCEA_AC_original_banner.sh`](../Ascii/NCEA_AC_original_banner.sh); Java не выполняет Bash. В каталоге `Ascii/` также есть текстовое описание. Оригинальное изображение `Ascii/Ascii final result.png` найдено при подготовке GitHub-публикации и использовано как визуальный эталон README; HTML и Python-референсы не обнаружены.
 
 ## Источник и вывод
 

@@ -12,7 +12,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BannerRendererTest {
-    private final StartupBanner.Info info=new StartupBanner.Info("0.1.0-dev","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.ENABLED);
+    private final StartupBanner.Info info=new StartupBanner.Info("1.0.0","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.ENABLED);
     private final BrandingSettings defaults=BrandingSettings.defaults();
     private BrandingSettings settings(BrandingSettings.Style style,BrandingSettings.CharsetMode charset,
             BrandingSettings.Colors colors,BrandingSettings.ColorMode mode,BannerTheme theme,int width) {
@@ -92,7 +92,7 @@ class BannerRendererTest {
         var s=settings(BrandingSettings.Style.CUSTOM,BrandingSettings.CharsetMode.UNICODE,
                 BrandingSettings.Colors.OFF,BrandingSettings.ColorMode.ANSI16,defaults.theme(),0);
         List<String> lines=render(s,new ConsoleCapabilities(false,true),"█ NCEA ${version} ${checks} ${status}\n");
-        assertEquals("█ NCEA 0.1.0-dev 5 ENABLED",lines.get(0));
+        assertEquals("█ NCEA 1.0.0 5 ENABLED",lines.get(0));
     }
     @Test void customRejectsControlUnknownAndOversize() {
         assertThrows(IllegalArgumentException.class,()->CustomBannerTemplate.expand("\u001B[31mBAD",info));
@@ -112,7 +112,7 @@ class BannerRendererTest {
         assertTrue(purple.contains("38;2;170;85;255"));
     }
     @Test void failedStatusNeverShowsEnabled() {
-        var failed=new StartupBanner.Info("0.1.0-dev","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.FAILED);
+        var failed=new StartupBanner.Info("1.0.0","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.FAILED);
         String all=String.join("\n",BannerRenderer.render(defaults,failed,new ConsoleCapabilities(false,true),null));
         assertTrue(all.contains("Status         FAILED"));
         assertFalse(all.contains("Status         ENABLED"));

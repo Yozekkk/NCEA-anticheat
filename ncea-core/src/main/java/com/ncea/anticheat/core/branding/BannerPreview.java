@@ -27,7 +27,7 @@ public final class BannerPreview {
         BrandingSettings settings=new BrandingSettings(true,true,style,charset,BrandingSettings.Alignment.LEFT,width,
                 BrandingSettings.Fallback.COMPACT,colors,mode,theme,defaults.information(),true,
                 BrandingSettings.ShutdownStyle.COMPACT,"custom-banner.txt");
-        StartupBanner.Info info=new StartupBanner.Info("0.1.0-dev","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.ENABLED);
+        StartupBanner.Info info=new StartupBanner.Info("1.0.0","1.20.1",17,5,"OBSERVE",57,StartupBanner.Status.ENABLED);
         String custom=null;
         if (style==BrandingSettings.Style.CUSTOM) {
             String file=options.get("custom");

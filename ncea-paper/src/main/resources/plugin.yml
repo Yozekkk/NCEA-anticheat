@@ -1,5 +1,5 @@
 name: NCEAAntiCheat
-version: 0.1.0-dev
+version: 1.0.0
 main: com.ncea.anticheat.paper.NceaPlugin
 api-version: '1.20'
 author: NCEA Studio

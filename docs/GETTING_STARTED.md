@@ -1,6 +1,6 @@
 # Быстрый старт
 
-NCEA AntiCheat 0.1.0 Development наблюдает за событиями на Paper 1.20/1.20.1. До установки проверьте [ограничения](KNOWN_LIMITATIONS.md).
+NCEA AntiCheat 1.0.0 Stable наблюдает за событиями на Paper 1.20/1.20.1. До установки проверьте [ограничения](KNOWN_LIMITATIONS.md).
 
 1. Подготовьте Paper нужной версии и Java 17.
 2. Скопируйте `dist/NCEA-AntiCheat-1.20.jar` либо `dist/NCEA-AntiCheat-1.20.1.jar` в `plugins/`.

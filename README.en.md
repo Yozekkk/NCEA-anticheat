@@ -6,7 +6,7 @@
 
 **Minecraft Server AntiCheat by [NCEA Studio](https://ncea-studio.com)**
 
-![Development](https://img.shields.io/badge/release-0.1.0%20Development-8358FF?style=flat-square) ![Paper](https://img.shields.io/badge/Paper-1.20%20%7C%201.20.1-5555FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-17-35D5FF?style=flat-square) ![Gradle](https://img.shields.io/badge/build-Gradle-5555FF?style=flat-square) ![Checks](https://img.shields.io/badge/active%20checks-5-8358FF?style=flat-square) [![CI](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml/badge.svg)](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
+<img src="docs/assets/readme/stable-badge.svg" alt="1.0.0 Stable" height="38" /> <img src="docs/assets/readme/paper-badge.svg" alt="Paper 1.20 / 1.20.1" height="38" /> <img src="docs/assets/readme/java-badge.svg" alt="Java 17" height="38" /> <img src="docs/assets/readme/gradle-badge.svg" alt="Gradle" height="38" /> <img src="docs/assets/readme/checks-badge.svg" alt="5 checks" height="38" /> [<img src="docs/assets/readme/ci-badge.svg" alt="CI" height="38" />](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
 
 [Install](#installation) · [Checks](#detection-engine) · [Console](#ncea-ac-console) · [Docs](docs/INDEX.md) · [Русский](README.md)
 
@@ -16,12 +16,12 @@
 
 ## System
 
-NCEA AntiCheat is NCEA Studio's modular Paper plugin. **0.1.0 Development** collects suspicious movement, combat and placement evidence, maintains an independent violation level (VL) for each check, and alerts staff. The default **OBSERVE** mode neither cancels player actions nor issues automatic bans.
+NCEA AntiCheat is NCEA Studio's modular Paper plugin. **1.0.0 Stable** collects suspicious movement, combat and placement evidence, maintains an independent violation level (VL) for each check, and alerts staff. The default **OBSERVE** mode neither cancels player actions nor issues automatic bans.
 
-<img src="docs/assets/readme/status.svg" alt="Development status: observe mode" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/status.svg" /><img src="docs/assets/readme/stable-status.gif" alt="1.0.0 Stable: observe mode" width="100%" /></picture>
 
 > [!IMPORTANT]
-> This is a development build with heuristics. No connected-client gameplay validation, detection rate, or real false-positive rate has been measured. A successful server startup is not a PvP test.
+> This stable-channel release contains heuristic checks. No connected-client gameplay validation, detection rate, or real false-positive rate has been measured. A successful server startup is not a PvP test.
 
 ## Detection engine
 
@@ -37,15 +37,42 @@ NCEA AntiCheat is NCEA Studio's modular Paper plugin. **0.1.0 Development** coll
 
 Context exemptions, ping, TPS, and server movement grace windows reduce obvious false signals. One signal does not establish cheating. [Mechanisms and limitations](docs/CHECKS.en.md).
 
+
+### Five signals · five visual models
+
+These are algorithm illustrations, not recorded gameplay or detection measurements.
+
+**Speed**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" alt="Illustration of Speed" width="100%" /></picture>
+
+**Fly**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" alt="Illustration of Fly" width="100%" /></picture>
+
+**Reach**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" alt="Illustration of Reach" width="100%" /></picture>
+
+**AutoClicker**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" alt="Illustration of AutoClicker" width="100%" /></picture>
+
+**FastPlace**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" alt="Illustration of FastPlace" width="100%" /></picture>
+
+<img src="docs/assets/readme/digital-snow.svg" alt="Digital snow" width="100%" />
+
 ## Architecture
 
-<img src="docs/assets/readme/architecture.svg" alt="NCEA AntiCheat module architecture" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" alt="NCEA AntiCheat module architecture" width="100%" /></picture>
 
 `ncea-core` contains observations, checks, VL/decay, player data, and branding without Paper imports. `ncea-paper` handles Paper events, exemptions, YAML, commands, and lifecycle. Shared sources compile separately against Paper API **1.20** and **1.20.1**. [Architecture notes](docs/ARCHITECTURE.md).
 
 ## NCEA AC console
 
-<img src="docs/assets/readme/terminal.svg" alt="Rendered console branding preview" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" alt="Rendered console branding preview" width="100%" /></picture>
 
 <details><summary>Show the real monochrome logo output</summary>
 
@@ -67,7 +94,11 @@ The geometry comes from the [provided Bash source](Ascii/NCEA_AC_original_banner
 
 *This GIF previews branding, not gameplay.* Terminal colors use conservative auto detection; ANSI 16/256/TrueColor, themes, Unicode/ASCII, and safe custom templates are available. [Branding guide](docs/CONSOLE_BRANDING.md) · [Custom banner](docs/BANNER_CUSTOMIZATION.md).
 
+<img src="docs/assets/readme/cyber-divider.svg" alt="Neon divider" width="100%" />
+
 ## Configuration
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" alt="Illustrative YAML configuration" width="100%" /></picture>
 
 First start creates `config.yml`, `checks.yml`, `branding.yml`, and `custom-banner.txt` under `plugins/NCEAAntiCheat/`.
 
@@ -98,7 +129,7 @@ checks:
 
 ## Installation
 
-1. Download the JAR matching your Paper version from the [v0.1.0-dev.0 prerelease](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v0.1.0-dev.0).
+1. Download the JAR matching your Paper version from the [v1.0.0 stable release](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0).
 2. Put it in `plugins/` on **Paper 1.20 or 1.20.1** running **Java 17**.
 3. Start the server and check for `Status ENABLED` beneath the logo.
 4. Run `/nceaac status`, `/nceaac checks`, and `/nceaac config validate`.
@@ -132,6 +163,8 @@ A full JDK is needed to build. Sources compile with `--release 17`; both JARs ap
 
 ## Testing
 
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" alt="Testing panel; actual results in the table" width="100%" /></picture>
+
 | Test | Actual result |
 |---|---|
 | JUnit 5 | **77 tests**, 0 failures (60 core, 17 Paper) |
@@ -152,8 +185,8 @@ Automatic punishment and setbacks need separate implementation and gameplay vali
 
 ## Documentation and provenance
 
-[Docs index](docs/INDEX.md) · [Quick start](docs/GETTING_STARTED.en.md) · [Development](docs/DEVELOPMENT.md) · [File map](docs/FILE_MANIFEST.md) · [Changelog](docs/CHANGELOG.md)
+[Docs index](docs/INDEX.md) · [Quick start](docs/GETTING_STARTED.en.md) · [Developer guide](docs/DEVELOPMENT.md) · [File map](docs/FILE_MANIFEST.md) · [Changelog](docs/CHANGELOG.md) · [Release Notes 1.0.0](docs/RELEASE_NOTES_1.0.0.md)
 
 The original product source was written for NCEA Studio. [LICENSE](LICENSE) currently states **All rights reserved** and grants no right to copy or modify the source. No code from the researched GPL/AGPL anticheats is bundled. Third-party sources and tool licenses are recorded in the [audit](docs/THIRD_PARTY_AUDIT.md).
 
-<img src="docs/assets/readme/footer.svg" alt="NCEA Studio — ncea-studio.com" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/footer.svg" /><img src="docs/assets/readme/neon-footer.gif" alt="NCEA Studio — ncea-studio.com" width="100%" /></picture>

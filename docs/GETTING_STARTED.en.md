@@ -1,6 +1,6 @@
 # Getting started
 
-NCEA AntiCheat 0.1.0 Development observes events on Paper 1.20/1.20.1. Read the [known limitations](KNOWN_LIMITATIONS.md) first.
+NCEA AntiCheat 1.0.0 Stable observes events on Paper 1.20/1.20.1. Read the [known limitations](KNOWN_LIMITATIONS.md) first.
 
 1. Prepare the matching Paper version and Java 17.
 2. Copy `dist/NCEA-AntiCheat-1.20.jar` or `dist/NCEA-AntiCheat-1.20.1.jar` into `plugins/`.

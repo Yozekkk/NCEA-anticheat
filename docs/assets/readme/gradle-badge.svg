@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 56" role="img" aria-label="GRADLE">
+<title>GRADLE</title><defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#070914"/><stop offset=".5" stop-color="#090C25"/><stop offset="1" stop-color="#111A40"/></linearGradient>
+<linearGradient id="line"><stop stop-color="#5555FF"/><stop offset=".5" stop-color="#8358FF"/><stop offset="1" stop-color="#35D5FF"/></linearGradient>
+<filter id="glow" x="-40%" y="-90%" width="180%" height="280%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="clip"><rect x="2" y="2" width="161" height="52" rx="18"/></clipPath>
+</defs><style>@keyframes fall{to{transform:translateY(56px)}}
+@keyframes drift{50%{transform:translate(10px,-8px);opacity:.3}}
+@keyframes scan{to{transform:translateY(56px)}}
+@keyframes pulse{50%{opacity:.42}}
+@keyframes flow{to{stroke-dashoffset:-40}}
+@keyframes enter{0%{opacity:.22;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes glitch{2%,96%{transform:translateX(0)}97%{transform:translateX(3px)}98%{transform:translateX(-2px)}99%{transform:translateX(0)}}
+.fall{animation:fall 12s linear infinite} .drift{animation:drift 7s ease-in-out infinite}
+.scan{animation:scan 7s linear infinite} .pulse{animation:pulse 3s ease-in-out infinite}
+.flow{animation:flow 5s linear infinite} .enter{animation:enter 2s ease-out both}
+.glitch{animation:glitch 8s linear infinite}
+@media (prefers-reduced-motion:reduce){.fall,.drift,.scan,.pulse,.flow,.enter,.glitch{animation:none!important}}</style><rect width="165" height="56" rx="18" fill="url(#bg)"/>
+<g clip-path="url(#clip)"><g opacity=".22"><path d="M0 0V56" fill="none" stroke="#5555FF" stroke-width="1" opacity="0.3" /><path d="M36 0V56" fill="none" stroke="#5555FF" stroke-width="1" opacity="0.3" /><path d="M72 0V56" fill="none" stroke="#5555FF" stroke-width="1" opacity="0.3" /><path d="M108 0V56" fill="none" stroke="#5555FF" stroke-width="1" opacity="0.3" /><path d="M144 0V56" fill="none" stroke="#5555FF" stroke-width="1" opacity="0.3" /><path d="M0 0H165" fill="none" stroke="#35D5FF" stroke-width="1" opacity="0.2" /><path d="M0 36H165" fill="none" stroke="#35D5FF" stroke-width="1" opacity="0.2" /></g><path d="M12 1H141L164 23V55H24L1 32V12Z" fill="#090C25" stroke="#8358FF" stroke-width="2"/><path d="M18 10H133M127 46H50" fill="none" stroke="#8358FF" stroke-width="1" opacity="0.45" /><path d="M46 12V45" fill="none" stroke="#8358FF" stroke-width="2" opacity="0.65" /><text x="24" y="37" fill="#8358FF" font-family="JetBrains Mono,DejaVu Sans Mono,monospace" font-size="18" font-weight="800" text-anchor="middle" >G</text><text x="58" y="36" fill="#F1F5FF" font-family="JetBrains Mono,DejaVu Sans Mono,monospace" font-size="13" font-weight="700" letter-spacing="1" >GRADLE</text><circle cx="138" cy="28" r="3" fill="#8358FF" class="pulse"/></g>
+<rect x="1" y="1" width="163" height="54" rx="18" fill="none" stroke="url(#line)" opacity=".4"/>
+</svg>

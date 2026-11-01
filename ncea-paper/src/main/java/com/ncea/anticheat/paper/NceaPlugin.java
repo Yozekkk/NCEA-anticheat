@@ -183,7 +183,7 @@ public final class NceaPlugin extends JavaPlugin implements Listener, CommandExe
             } else msg(sender,"Invalid configuration / Ошибка конфигурации");
             return true;
         }
-        if (sub.equals("status") || sub.equals("version")) { msg(sender,"0.1.0 Development; active players="+players.size()+"; Paper="+Bukkit.getBukkitVersion()); return true; }
+        if (sub.equals("status") || sub.equals("version")) { msg(sender,getDescription().getVersion()+" Stable; active players="+players.size()+"; Paper="+Bukkit.getBukkitVersion()); return true; }
         if (sub.equals("checks")) { msg(sender,checks.checks().stream().map(c->c.id()+"="+(settings.rule(c.id()).enabled()?"on":"off")).toList().toString()); return true; }
         if (sub.equals("performance")) { for(int i=0;i<4;i++) msg(sender,new String[]{"move","attack","place","break"}[i]+": calls="+calls[i]+", avg ns="+(calls[i]==0?0:nanos[i]/calls[i])); return true; }
         if (sub.equals("alerts")) { if(!(sender instanceof Player p)) { msg(sender,"Player only / Только игрок"); return true; } if(!alerts.add(p.getUniqueId())) alerts.remove(p.getUniqueId()); msg(sender,"Alerts="+alerts.contains(p.getUniqueId())); return true; }

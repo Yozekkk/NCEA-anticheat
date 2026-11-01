@@ -1,6 +1,6 @@
 # NCEA AntiCheat — документация
 
-**NCEA Studio** · **0.1.0 Development** · [Сайт студии](https://ncea-studio.com)
+**NCEA Studio** · **1.0.0 Stable** · [Сайт студии](https://ncea-studio.com)
 
 | Администратору сервера | Разработчику и аудитору |
 |---|---|
@@ -12,4 +12,5 @@
 | [Справочник branding.yml](CONFIG_REFERENCE.md) | [Карта файлов](FILE_MANIFEST.md) |
 | [Проверки](CHECKS.md) · [English](CHECKS.en.md) | [Ограничения](KNOWN_LIMITATIONS.md) · [Итоговый отчёт](FINAL_REPORT.md) |
 | [Команды](COMMANDS.md) · [Права](PERMISSIONS.md) | [История изменений](CHANGELOG.md) · [Скиллы](SKILLS.md) |
+| [Примечания к выпуску 1.0.0](RELEASE_NOTES_1.0.0.md) | [Графические ресурсы README](../docs/assets/readme/) |
 | [Решение проблем](TROUBLESHOOTING.md) · [Совместимость](COMPATIBILITY.md) | [Брендинг](BRANDING.md) |

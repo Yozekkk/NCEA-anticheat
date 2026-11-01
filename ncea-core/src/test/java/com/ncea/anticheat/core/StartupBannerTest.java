@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StartupBannerTest {
     private StartupBanner.Info info(StartupBanner.Status status) {
-        return new StartupBanner.Info("0.1.0-dev","1.20.1",17,5,"OBSERVE",42,status);
+        return new StartupBanner.Info("1.0.0","1.20.1",17,5,"OBSERVE",42,status);
     }
     private StartupBanner.Options options(StartupBanner.Style style) {
         return new StartupBanner.Options(true,style,false,true,true,true,true);
@@ -17,7 +17,7 @@ class StartupBannerTest {
     void includesDynamicFieldsAndAscii(StartupBanner.Style style) {
         List<String> lines=StartupBanner.render(options(style),info(StartupBanner.Status.ENABLED));
         String text=String.join("\n",lines);
-        for(String fragment:List.of("NCEA AntiCheat","Version        0.1.0-dev","NCEA Studio","Platform       Paper 1.20.1","Java           17","Active Checks  5","Mode           OBSERVE","Status         ENABLED","Startup        42 ms")) assertTrue(text.contains(fragment),fragment);
+        for(String fragment:List.of("NCEA AntiCheat","Version        1.0.0","NCEA Studio","Platform       Paper 1.20.1","Java           17","Active Checks  5","Mode           OBSERVE","Status         ENABLED","Startup        42 ms")) assertTrue(text.contains(fragment),fragment);
         assertTrue(lines.stream().allMatch(s->s.length()<=80 && s.chars().allMatch(c->c>=32 && c<=126)));
     }
     @Test void disabledAndFailedNeverClaimSuccess() {
@@ -28,6 +28,6 @@ class StartupBannerTest {
     }
     @Test void togglesHideOptionalFields() {
         String text=String.join("\n",StartupBanner.render(new StartupBanner.Options(true,StartupBanner.Style.COMPACT,false,false,false,false,false),info(StartupBanner.Status.ENABLED)));
-        assertFalse(text.contains("v0.1.0"));assertFalse(text.contains("Platform       "));assertFalse(text.contains("Active Checks  "));assertFalse(text.contains("Startup        "));
+        assertFalse(text.contains("v1.0.0"));assertFalse(text.contains("Platform       "));assertFalse(text.contains("Active Checks  "));assertFalse(text.contains("Startup        "));
     }
 }

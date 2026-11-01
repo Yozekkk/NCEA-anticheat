@@ -97,7 +97,7 @@ final class BrandingLoader {
                 if (Files.size(customFile.toPath()) > CustomBannerTemplate.MAX_BYTES)
                     throw new IllegalArgumentException("Custom banner exceeds 8192 bytes");
                 template = Files.readString(customFile.toPath(), StandardCharsets.UTF_8);
-                CustomBannerTemplate.expand(template, new StartupBanner.Info("0.1.0-dev","1.20.1",17,5,"OBSERVE",1,StartupBanner.Status.ENABLED));
+                CustomBannerTemplate.expand(template, new StartupBanner.Info("1.0.0","1.20.1",17,5,"OBSERVE",1,StartupBanner.Status.ENABLED));
             } catch (Exception ex) {
                 template = null;
                 logger.warning("Custom banner unavailable; compact fallback: " + ex.getMessage());

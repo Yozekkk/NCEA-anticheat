@@ -1,6 +1,6 @@
 ---
 name: ncea-anticheat-development
-description: Develop and verify NCEA AntiCheat 0.1.0 Development for Paper 1.20 and 1.20.1.
+description: Develop and verify NCEA AntiCheat 1.0.0 Stable for Paper 1.20 and 1.20.1.
 ---
 # NCEA AntiCheat development
 

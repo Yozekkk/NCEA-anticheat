@@ -6,7 +6,7 @@
 
 **Minecraft Server AntiCheat by [NCEA Studio](https://ncea-studio.com)**
 
-![Development](https://img.shields.io/badge/release-0.1.0%20Development-8358FF?style=flat-square) ![Paper](https://img.shields.io/badge/Paper-1.20%20%7C%201.20.1-5555FF?style=flat-square) ![Java](https://img.shields.io/badge/Java-17-35D5FF?style=flat-square) ![Gradle](https://img.shields.io/badge/build-Gradle-5555FF?style=flat-square) ![Checks](https://img.shields.io/badge/active%20checks-5-8358FF?style=flat-square) [![CI](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml/badge.svg)](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
+<img src="docs/assets/readme/stable-badge.svg" alt="1.0.0 Stable" height="38" /> <img src="docs/assets/readme/paper-badge.svg" alt="Paper 1.20 / 1.20.1" height="38" /> <img src="docs/assets/readme/java-badge.svg" alt="Java 17" height="38" /> <img src="docs/assets/readme/gradle-badge.svg" alt="Gradle" height="38" /> <img src="docs/assets/readme/checks-badge.svg" alt="5 checks" height="38" /> [<img src="docs/assets/readme/ci-badge.svg" alt="CI" height="38" />](https://github.com/Yozekkk/NCEA-anticheat/actions/workflows/ci.yml)
 
 [Установка](#установка) · [Проверки](#движок-обнаружения) · [Консоль](#консоль-ncea-ac) · [Документация](docs/INDEX.md) · [English](README.en.md)
 
@@ -16,12 +16,12 @@
 
 ## Система
 
-NCEA AntiCheat — самостоятельный модульный Paper-плагин студии NCEA. Версия **0.1.0 Development** собирает признаки подозрительного движения, боя и установки блоков, ведёт независимый Violation Level (VL) для каждой проверки и показывает уведомления персоналу. По умолчанию работает в режиме **OBSERVE**: действие игрока не отменяется, автоматические баны не выдаются.
+NCEA AntiCheat — самостоятельный модульный Paper-плагин студии NCEA. Версия **1.0.0 Stable** собирает признаки подозрительного движения, боя и установки блоков, ведёт независимый Violation Level (VL) для каждой проверки и показывает уведомления персоналу. По умолчанию работает в режиме **OBSERVE**: действие игрока не отменяется, автоматические баны не выдаются.
 
-<img src="docs/assets/readme/status.svg" alt="Статус 0.1.0 Development: наблюдение" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/status.svg" /><img src="docs/assets/readme/stable-status.gif" alt="Статус 1.0.0 Stable: наблюдение" width="100%" /></picture>
 
 > [!IMPORTANT]
-> Это development-сборка с эвристиками. Игровые испытания с подключённым клиентом, реальные доли обнаружения и ложных срабатываний ещё не измерены. Результаты сборки и запуска сервера не заменяют PvP-тестирование.
+> Это стабильный выпуск текущих эвристик. Игровые испытания с подключённым клиентом, реальные доли обнаружения и ложных срабатываний ещё не измерены. Результаты сборки и запуска сервера не заменяют PvP-тестирование.
 
 ## Движок обнаружения
 
@@ -37,15 +37,42 @@ NCEA AntiCheat — самостоятельный модульный Paper-пл�
 
 Проверки учитывают контекстные исключения, ping, TPS и окна после серверных изменений движения. Одиночный сигнал не означает доказанный чит. [Механизмы, пороги и false positives](docs/CHECKS.md).
 
+
+### Пять сигналов — пять визуальных моделей
+
+Иллюстрации ниже показывают алгоритмические идеи. Это не запись игрового детектора.
+
+**Speed**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/speed-demo.svg" /><img src="docs/assets/readme/speed-demo.gif" alt="Иллюстрация Speed" width="100%" /></picture>
+
+**Fly**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fly-demo.svg" /><img src="docs/assets/readme/fly-demo.gif" alt="Иллюстрация Fly" width="100%" /></picture>
+
+**Reach**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/reach-demo.svg" /><img src="docs/assets/readme/reach-demo.gif" alt="Иллюстрация Reach" width="100%" /></picture>
+
+**AutoClicker**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/autoclicker-demo.svg" /><img src="docs/assets/readme/autoclicker-demo.gif" alt="Иллюстрация AutoClicker" width="100%" /></picture>
+
+**FastPlace**
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/fastplace-demo.svg" /><img src="docs/assets/readme/fastplace-demo.gif" alt="Иллюстрация FastPlace" width="100%" /></picture>
+
+<img src="docs/assets/readme/digital-snow.svg" alt="Цифровые частицы" width="100%" />
+
 ## Архитектура
 
-<img src="docs/assets/readme/architecture.svg" alt="Архитектура NCEA AntiCheat: Paper, ядро проверок, нарушения, конфигурация и оформление" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/architecture.svg" /><img src="docs/assets/readme/architecture-motion.gif" alt="Архитектура NCEA AntiCheat: Paper, ядро проверок, нарушения, конфигурация и оформление" width="100%" /></picture>
 
 `ncea-core` не зависит от Paper: наблюдения, проверки, VL/decay, данные игроков и рендерер. `ncea-paper` обрабатывает события, исключения, YAML, команды и жизненный цикл. Один общий исходный набор отдельно компилируется против Paper API **1.20** и **1.20.1**. [Техническая схема](docs/ARCHITECTURE.md).
 
 ## Консоль NCEA AC
 
-<img src="docs/assets/readme/terminal.svg" alt="Визуальный предпросмотр консольного баннера" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/terminal.svg" /><img src="docs/assets/readme/console-boot.gif" alt="Визуальный предпросмотр консольного баннера" width="100%" /></picture>
 
 <details>
 <summary>Открыть настоящий монохромный вывод логотипа</summary>
@@ -68,7 +95,11 @@ NCEA AntiCheat — самостоятельный модульный Paper-пл�
 
 *GIF показывает оформление логотипа, а не игровой детектор.* Цвета в серверной консоли включаются консервативно; доступны ANSI 16/256/TrueColor, темы, Unicode/ASCII и пользовательский безопасный шаблон. [Руководство по оформлению](docs/CONSOLE_BRANDING.md) · [Свой баннер](docs/BANNER_CUSTOMIZATION.md).
 
+<img src="docs/assets/readme/cyber-divider.svg" alt="Неоновый разделитель" width="100%" />
+
 ## Конфигурация
+
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/config-demo.svg" /><img src="docs/assets/readme/config-demo.gif" alt="Иллюстрация YAML-конфигурации" width="100%" /></picture>
 
 Плагин создаёт `config.yml`, `checks.yml`, `branding.yml` и `custom-banner.txt` в `plugins/NCEAAntiCheat/`. Пример:
 
@@ -99,7 +130,7 @@ checks:
 
 ## Установка
 
-1. Скачайте JAR для вашей версии Paper из [предварительного релиза v0.1.0-dev.0](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v0.1.0-dev.0).
+1. Скачайте JAR для вашей версии Paper из [релиза v1.0.0](https://github.com/Yozekkk/NCEA-anticheat/releases/tag/v1.0.0).
 2. Поместите JAR в папку `plugins/` сервера **Paper 1.20 или 1.20.1**, работающего на **Java 17**.
 3. Запустите сервер и дождитесь сообщения `Status ENABLED` под логотипом.
 4. Проверьте `/nceaac status`, `/nceaac checks`, `/nceaac config validate`.
@@ -134,6 +165,8 @@ checks:
 
 ## Проверка качества
 
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/testing-panel.svg" /><img src="docs/assets/readme/testing-panel.gif" alt="Панель тестирования; фактические результаты в таблице" width="100%" /></picture>
+
 | Проверка | Фактический результат |
 |---|---|
 | JUnit 5 | **77 тестов**, 0 ошибок (60 core, 17 Paper) |
@@ -154,8 +187,12 @@ checks:
 
 ## Документация и происхождение
 
-[Оглавление](docs/INDEX.md) · [Быстрый старт](docs/GETTING_STARTED.md) · [Разработка](docs/DEVELOPMENT.md) · [Карта файлов](docs/FILE_MANIFEST.md) · [История изменений](docs/CHANGELOG.md)
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/documentation-panel.svg" /><img src="docs/assets/readme/documentation-panel.gif" alt="Навигация по документации" width="100%" /></picture>
+
+[Оглавление](docs/INDEX.md) · [Быстрый старт](docs/GETTING_STARTED.md) · [Разработка](docs/DEVELOPMENT.md) · [Карта файлов](docs/FILE_MANIFEST.md) · [История изменений](docs/CHANGELOG.md) · [Release Notes 1.0.0](docs/RELEASE_NOTES_1.0.0.md)
+
+<img src="docs/assets/readme/license-badge.svg" alt="All rights reserved" height="38" /> <img src="docs/assets/readme/studio-badge.svg" alt="NCEA Studio" height="38" />
 
 Исходный код продукта разработан для NCEA Studio. Проект распространяется с уведомлением **All rights reserved** в [LICENSE](LICENSE); разрешение на копирование или переработку исходников этим уведомлением не предоставлено. Код исследованных GPL/AGPL-античитов в проект не включён. Лицензии и источники использованных инструментов описаны в [аудите сторонних компонентов](docs/THIRD_PARTY_AUDIT.md).
 
-<img src="docs/assets/readme/footer.svg" alt="NCEA Studio — ncea-studio.com" width="100%" />
+<picture><source media="(prefers-reduced-motion: reduce)" srcset="docs/assets/readme/footer.svg" /><img src="docs/assets/readme/neon-footer.gif" alt="NCEA Studio — ncea-studio.com" width="100%" /></picture>
